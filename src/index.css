@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.animate-in {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}

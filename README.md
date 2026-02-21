@@ -3,7 +3,7 @@
 A responsive, high-performance inventory management dashboard designed for small-to-medium businesses in Ghana. This project demonstrates modern frontend engineering practices, focusing on performance, mobile-first design, and real-time user interaction.
 
 ## 🚀 Live Demo
-[Insert your Vercel/Netlify link here]
+[https://benjamin-djata-my-portfolio.vercel.app/]
 
 ## 🛠️ The Tech Stack
 * **Framework:** [React 18](https://reactjs.org/) (Vite-powered)

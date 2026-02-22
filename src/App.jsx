@@ -98,7 +98,7 @@ const App = () => {
       // Auto-hide the message after 5 seconds
       setTimeout(() => setStatus({ type: '', message: '' }), 5000);
     };
-  
+      //Force Update 1
   return (
     <div className={`min-h-screen transition-colors duration-300 font-sans ${darkMode ? 'bg-slate-950 text-slate-50' : 'bg-slate-50 text-slate-900'}`}>
       

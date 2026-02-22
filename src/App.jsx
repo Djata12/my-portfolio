@@ -76,7 +76,7 @@ const App = () => {
       setStatus({ type: 'loading', message: 'Sending message...' });
     
       try {
-        const response = await fetch('https://portfolio-backend-rl0z.onrender.com', {
+        const response = await fetch('https://portfolio-backend-rl0z.onrender.com/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),

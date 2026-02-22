@@ -68,6 +68,37 @@ const App = () => {
   ];
 
   // --- COMPONENT STRUCTURE ---
+    const [status, setStatus] = useState({ type: '', message: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+    const handleContactSubmit = async (e) => {
+      e.preventDefault();
+      setStatus({ type: 'loading', message: 'Sending message...' });
+    
+      try {
+        const response = await fetch('https://portfolio-backend-rl0z.onrender.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          setStatus({ type: 'success', message: "Message sent to Benjamin's Database! 🚀" });
+          setFormData({ name: '', email: '', message: '' });
+        } else {
+          setStatus({ type: 'error', message: "Something went wrong. Please try again." });
+        }
+      } catch (err) {
+        console.error("Connection Error:", err);
+        setStatus({ type: 'error', message: "Backend not running! Start it with 'node server.js'" });
+      }
+    
+      // Auto-hide the message after 5 seconds
+      setTimeout(() => setStatus({ type: '', message: '' }), 5000);
+    };
+  
   return (
     <div className={`min-h-screen transition-colors duration-300 font-sans ${darkMode ? 'bg-slate-950 text-slate-50' : 'bg-slate-50 text-slate-900'}`}>
       
@@ -266,24 +297,54 @@ const App = () => {
       
       
       {/* --- LIVE DEMO SECTION END --- */}
-      <section id="contact" className="py-20 bg-slate-900 text-slate-300">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Let's Work Together</h2>
-          <p className="mb-10 text-lg">
-            Currently open for new opportunities in Ghana or remote work.
-          </p>
-          <a 
-            href={`mailto:${personalInfo.email}`} 
-            className="inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition"
-          >
-            Say Hello
-          </a>
-          
-          <div className="mt-20 pt-8 border-t border-slate-800 text-sm text-slate-500">
-            <p>© {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
-          </div>
-        </div>
-      </section>
+      <section id="contact" className={`py-20 transition-colors ${darkMode ? 'bg-slate-900' : 'bg-slate-100'}`}>
+  <div className="max-w-xl mx-auto px-4">
+    <h2 className={`text-3xl font-bold text-center mb-8 ${darkMode ? 'text-white' : 'text-slate-900'}`}>Send Me a Message</h2>
+    
+      {status.message && (
+    <div className={`mb-6 p-4 rounded-lg text-center font-medium transition-all animate-bounce ${
+      status.type === 'success' 
+        ? 'bg-green-100 text-green-700 border border-green-200' 
+        : status.type === 'error'
+        ? 'bg-red-100 text-red-700 border border-red-200'
+        : 'bg-blue-100 text-blue-700 border border-blue-200'
+    }`}>
+      {status.message}
+    </div>
+  )}
+    
+    <form onSubmit={handleContactSubmit} className="space-y-4">
+      <input 
+        type="text" 
+        placeholder="Your Name" 
+        className="w-full p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700"
+        value={formData.name}
+        onChange={(e) => setFormData({...formData, name: e.target.value})}
+        required
+      />
+      <input 
+        type="email" 
+        placeholder="Your Email" 
+        className="w-full p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700"
+        value={formData.email}
+        onChange={(e) => setFormData({...formData, email: e.target.value})}
+        required
+      />
+      <textarea 
+        placeholder="Your Message" 
+        rows="4" 
+        className="w-full p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700"
+        value={formData.message}
+        onChange={(e) => setFormData({...formData, message: e.target.value})}
+        required
+      ></textarea>
+      
+      <button type="submit" className="w-full py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition">
+        Send to Benjamin
+      </button>
+    </form>
+  </div>
+</section>
 
     </div>
   );

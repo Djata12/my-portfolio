@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Preview</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:1200px;
+    height:630px;
+
+    background:#09090b;
+
+    color:white;
+
+    font-family:'Poppins', sans-serif;
+
+    overflow:hidden;
+
+    position:relative;
+
+    margin:0 auto;
+}
+
+/* GLOWS */
+
+.glow{
+    position:absolute;
+    border-radius:9999px;
+    filter:blur(140px);
+}
+
+.glow-one{
+    width:500px;
+    height:500px;
+
+    background:#3b82f6;
+
+    opacity:.12;
+
+    top:-140px;
+    left:-140px;
+}
+
+.glow-two{
+    width:450px;
+    height:450px;
+
+    background:#06b6d4;
+
+    opacity:.10;
+
+    bottom:-120px;
+    right:-120px;
+}
+
+/* CONTAINER */
+
+.container{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    z-index:10;
+
+    width:100%;
+
+    max-width:1200px;
+
+    padding:0 80px;
+
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+/* NAME */
+
+h1{
+    font-size:92px;
+
+    font-weight:700;
+
+    letter-spacing:-4px;
+
+    line-height:1;
+
+    text-align:center;
+}
+
+/* ROLE */
+
+.role{
+    margin-top:20px;
+
+    color:#3b82f6;
+
+    font-size:34px;
+
+    font-weight:500;
+
+    text-align:center;
+}
+
+/* LINE */
+
+.line{
+    width:180px;
+    height:2px;
+
+    background:#3b82f6;
+
+    margin:30px auto;
+
+    border-radius:9999px;
+}
+
+/* DESCRIPTION */
+
+.description{
+    color:#a1a1aa;
+
+    font-size:24px;
+
+    line-height:1.6;
+
+    max-width:900px;
+
+    text-align:center;
+}
+
+/* TECH STACK */
+
+.tech-stack{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:48px;
+
+    margin-top:55px;
+}
+
+.tech-stack i{
+    font-size:64px;
+}
+
+/* BOTTOM */
+
+.bottom{
+    margin-top:60px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:60px;
+
+    border-top:1px solid #27272a;
+
+    padding-top:28px;
+}
+
+.item{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:500;
+}
+
+.item svg{
+    width:28px;
+    height:28px;
+
+    stroke:#3b82f6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- GLOWS -->
+
+<div class="glow glow-one"></div>
+
+<div class="glow glow-two"></div>
+
+<!-- CONTENT -->
+
+<div class="container">
+
+    <!-- NAME -->
+
+    <h1>Benjamin Djata</h1>
+
+    <!-- ROLE -->
+
+    <p class="role">
+        Full-Stack Developer
+    </p>
+
+    <!-- LINE -->
+
+    <div class="line"></div>
+
+    <!-- DESCRIPTION -->
+
+    <p class="description">
+        Building modern web applications,
+        APIs, dashboards & digital experiences
+    </p>
+
+    <!-- TECH STACK -->
+
+    <div class="tech-stack">
+
+        <i class="devicon-react-original colored"></i>
+
+        <i class="devicon-javascript-plain colored"></i>
+
+        <i class="devicon-mongodb-plain colored"></i>
+
+        <i class="devicon-firebase-plain colored"></i>
+
+        <i class="devicon-tailwindcss-original colored"></i>
+
+    </div>
+
+    <!-- BOTTOM -->
+
+    <div class="bottom">
+
+        <!-- FREELANCE -->
+
+        <div class="item">
+
+            <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 12h18M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z"
+                />
+
+            </svg>
+
+            <span>Freelance</span>
+
+        </div>
+
+        <!-- REMOTE -->
+
+        <div class="item">
+
+            <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 5h16v10H4z"
+                />
+
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2 19h20"
+                />
+
+            </svg>
+
+            <span>Remote</span>
+
+        </div>
+
+        <!-- FULL TIME -->
+
+        <div class="item">
+
+            <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 7h16v12H4z"
+                />
+
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 7V5h6v2"
+                />
+
+            </svg>
+
+            <span>Full-Time</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

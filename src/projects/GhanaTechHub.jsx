@@ -83,24 +83,16 @@ const developers = [
 ];
 
 export default function GhanaTechHub() {
+
     const [search, setSearch] = useState("");
 
-    const filteredDevelopers = developers.filter(
-        (dev) =>
-            dev.name.toLowerCase().includes(search.toLowerCase()) ||
-            dev.role.toLowerCase().includes(search.toLowerCase()) ||
-            dev.location.toLowerCase().includes(search.toLowerCase()) ||
-            dev.stack.join(" ").toLowerCase().includes(search.toLowerCase())
-    );
-
     return (
+
         <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
 
-            
+            {/* HERO */}
 
             <section className="relative px-6 pt-24 pb-20 border-b border-zinc-800 overflow-hidden">
-
-                
 
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-yellow-500/10 blur-[120px] rounded-full"></div>
 
@@ -108,15 +100,11 @@ export default function GhanaTechHub() {
 
                 <div className="max-w-7xl mx-auto relative z-10">
 
-                    
-
                     <div className="inline-block bg-yellow-500/10 border border-yellow-500/20 text-yellow-300 px-5 py-3 rounded-full text-sm backdrop-blur-xl">
                         🇬🇭 Ghana's Fastest Growing Developer Community
                     </div>
 
-                    
-
-                    <h1 className="text-6xl lg:text-8xl font-medium tracking-tight leading-none mt-8">
+                    <h1 className="text-5xl sm:text-6xl lg:text-8xl font-medium tracking-tight leading-none mt-8 break-words">
                         Connecting
                         <br />
                         Ghanaian
@@ -124,15 +112,11 @@ export default function GhanaTechHub() {
                         Developers
                     </h1>
 
-                    
-
-                    <p className="text-zinc-400 text-xl mt-8 max-w-3xl leading-relaxed">
+                    <p className="text-zinc-400 text-lg sm:text-xl mt-8 max-w-3xl leading-relaxed">
                         Ghana Tech Hub is a modern African developer community helping
                         engineers, designers and founders collaborate, network and build
                         impactful products across Ghana and beyond.
                     </p>
-
-                    
 
                     <div className="flex flex-wrap gap-4 mt-10">
 
@@ -154,13 +138,13 @@ export default function GhanaTechHub() {
 
                     </div>
 
-                    
+                    {/* STATS */}
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
 
-                        <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 hover:border-yellow-500/20 transition">
+                        <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 hover:border-yellow-500/20 transition overflow-hidden">
 
-                            <h2 className="text-4xl font-medium tracking-tight">
+                            <h2 className="text-3xl sm:text-4xl font-medium tracking-tight break-words">
                                 4.2K+
                             </h2>
 
@@ -170,9 +154,9 @@ export default function GhanaTechHub() {
 
                         </div>
 
-                        <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 hover:border-yellow-500/20 transition">
+                        <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 hover:border-yellow-500/20 transition overflow-hidden">
 
-                            <h2 className="text-4xl font-medium tracking-tight">
+                            <h2 className="text-3xl sm:text-4xl font-medium tracking-tight break-words">
                                 120+
                             </h2>
 
@@ -182,9 +166,9 @@ export default function GhanaTechHub() {
 
                         </div>
 
-                        <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 hover:border-yellow-500/20 transition">
+                        <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 hover:border-yellow-500/20 transition overflow-hidden">
 
-                            <h2 className="text-4xl font-medium tracking-tight">
+                            <h2 className="text-3xl sm:text-4xl font-medium tracking-tight break-words">
                                 300+
                             </h2>
 
@@ -194,9 +178,9 @@ export default function GhanaTechHub() {
 
                         </div>
 
-                        <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 hover:border-yellow-500/20 transition">
+                        <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 hover:border-yellow-500/20 transition overflow-hidden">
 
-                            <h2 className="text-4xl font-medium tracking-tight">
+                            <h2 className="text-3xl sm:text-4xl font-medium tracking-tight break-words">
                                 16
                             </h2>
 
@@ -212,7 +196,7 @@ export default function GhanaTechHub() {
 
             </section>
 
-            
+            {/* SEARCH */}
 
             <section className="px-6 py-16">
 
@@ -222,7 +206,7 @@ export default function GhanaTechHub() {
 
                         <div>
 
-                            <h2 className="text-5xl font-medium tracking-tight">
+                            <h2 className="text-4xl sm:text-5xl font-medium tracking-tight">
                                 Discover Developers
                             </h2>
 
@@ -232,19 +216,17 @@ export default function GhanaTechHub() {
 
                         </div>
 
-                        
-
-                        <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
 
                             <input
                                 type="text"
                                 placeholder="Search developers..."
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
-                                className="bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4 w-[320px] outline-none focus:border-yellow-500 transition"
+                                className="bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4 w-full sm:w-[320px] min-w-0 outline-none focus:border-yellow-500 transition"
                             />
 
-                            <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 rounded-2xl font-medium tracking-tight transition shadow-lg hover:shadow-yellow-500/20">
+                            <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-2xl font-medium tracking-tight transition shadow-lg hover:shadow-yellow-500/20 whitespace-nowrap">
                                 Search
                             </button>
 
@@ -256,7 +238,7 @@ export default function GhanaTechHub() {
 
             </section>
 
-            
+            {/* DEVELOPERS */}
 
             <section className="px-6 pb-24">
 
@@ -264,42 +246,22 @@ export default function GhanaTechHub() {
 
                     <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-                        {filteredDevelopers.length === 0 && (
-
-                            <div className="col-span-full text-center py-20">
-
-                                <h2 className="text-4xl font-medium tracking-tight">
-                                    No Developers Found
-                                </h2>
-
-                                <p className="text-zinc-500 mt-4">
-                                    Try searching for React, Backend, UI/UX, Accra...
-                                </p>
-
-                            </div>
-
-                        )}
-
-                        {filteredDevelopers.map((dev) => (
+                        {developers.map((dev) => (
 
                             <div
                                 key={dev.name}
                                 className="group relative bg-[#121212] border border-zinc-800 rounded-[32px] overflow-hidden hover:border-yellow-500/30 transition duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-500/10"
                             >
 
-                                
-
                                 <div className="relative h-80 overflow-hidden">
 
                                     <img
                                         src={dev.image}
                                         alt={dev.name}
-                                        className="flex-1 min-w-0 h-full object-cover group-hover:scale-110 transition duration-700"
+                                        className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                                     />
 
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/20 to-transparent"></div>
-
-                                    
 
                                     <div className="absolute bottom-6 left-6">
 
@@ -311,29 +273,25 @@ export default function GhanaTechHub() {
 
                                 </div>
 
-                                
-
                                 <div className="p-8">
 
-                                    <div className="flex items-start justify-between">
+                                    <div className="flex items-start justify-between gap-4">
 
-                                        <div>
+                                        <div className="min-w-0">
 
-                                            <h3 className="text-3xl font-medium tracking-tight">
+                                            <h3 className="text-3xl font-medium tracking-tight break-words">
                                                 {dev.name}
                                             </h3>
 
-                                            <p className="text-yellow-400 mt-2">
+                                            <p className="text-yellow-400 mt-2 break-words">
                                                 {dev.role}
                                             </p>
 
                                         </div>
 
-                                        <div className="w-3 h-3 rounded-full bg-yellow-400 mt-4"></div>
+                                        <div className="w-3 h-3 rounded-full bg-yellow-400 mt-4 shrink-0"></div>
 
                                     </div>
-
-                                    
 
                                     <div className="mt-4 space-y-2">
 
@@ -345,13 +303,11 @@ export default function GhanaTechHub() {
                                             {dev.experience}
                                         </p>
 
-                                        <p className="text-yellow-400 text-sm">
+                                        <p className="text-yellow-400 text-sm break-words">
                                             {dev.specialty}
                                         </p>
 
                                     </div>
-
-                                    
 
                                     <div className="flex flex-wrap gap-3 mt-8">
 
@@ -368,9 +324,7 @@ export default function GhanaTechHub() {
 
                                     </div>
 
-                                    
-
-                                    <div className="flex flex-wrap items-center gap-3 mt-10 pt-6 border-t border-zinc-800">
+                                    <div className="flex flex-wrap items-center gap-6 mt-10 pt-6 border-t border-zinc-800">
 
                                         <div>
 
@@ -410,9 +364,7 @@ export default function GhanaTechHub() {
 
                                     </div>
 
-                                    
-
-                                    <div className="flex gap-4 mt-10">
+                                    <div className="flex flex-col sm:flex-row gap-4 mt-10">
 
                                         <Link
                                             to={dev.profile}

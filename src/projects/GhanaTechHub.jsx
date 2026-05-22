@@ -294,7 +294,7 @@ export default function GhanaTechHub() {
                                     <img
                                         src={dev.image}
                                         alt={dev.name}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                                        className="flex-1 min-w-0 h-full object-cover group-hover:scale-110 transition duration-700"
                                     />
 
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/20 to-transparent"></div>
@@ -370,7 +370,7 @@ export default function GhanaTechHub() {
 
                                     
 
-                                    <div className="flex items-center justify-between mt-10 pt-6 border-t border-zinc-800">
+                                    <div className="flex flex-wrap items-center gap-3 mt-10 pt-6 border-t border-zinc-800">
 
                                         <div>
 

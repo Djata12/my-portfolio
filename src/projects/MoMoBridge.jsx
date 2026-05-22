@@ -62,7 +62,7 @@
                 Secure Mobile Money Payments
                 </div>
 
-                <h1 className="text-6xl lg:text-8xl font-medium tracking-tight mt-8 leading-none">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight mt-8 leading-none">
                 MoMo
                 <br />
                 Bridge API
@@ -88,7 +88,7 @@
                     </p>
                 </div>
 
-                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 hover:border-green-500/30 transition">
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 overflow-hidden hover:border-green-500/30 transition">
                     <h2 className="text-3xl font-bold">
                     99.9%
                     </h2>

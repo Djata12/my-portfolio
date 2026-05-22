@@ -166,12 +166,12 @@ return (
                 <img
                     src={profileImg}
                     alt="Benjamin Nii Annang Djata"
-                    className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] object-cover rounded-full border-4 border-blue-500/30 shadow-xl shadow-blue-500/20 transform-gpu hover:scale-105 transition duration-300"
+                    className="relative w-[230px] h-[230px] sm:w-[320px] sm:h-[320px] object-cover rounded-full border-4 border-blue-500/30 shadow-xl shadow-blue-500/20 transform-gpu hover:scale-105 transition duration-300"
                 />
 
                 
 
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-zinc-900 border border-zinc-800 px-6 py-3 rounded-2xl shadow-xl">
+                    <div className="absolute -bottom-12 sm:-bottom-5 left-1/2 -translate-x-1/2 bg-zinc-900 border border-zinc-800 rounded-3xl p-5 min-w-0">
 
                     <p className="text-sm text-zinc-400">
                         Based In

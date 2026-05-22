@@ -1,9 +1,9 @@
-import kwame from "../assets/developers/kwame.jpg";
-import naa from "../assets/developers/naa.jpg";
-import richard from "../assets/developers/richard.jpg";
-import enyonam from "../assets/developers/enyonam.jpg";
-import daniel from "../assets/developers/daniel.jpg";
-import esi from "../assets/developers/esi.jpg";
+import kwame from "../assets/developers/kwame.webp";
+import naa from "../assets/developers/naa.webp";
+import richard from "../assets/developers/richard.webp";
+import enyonam from "../assets/developers/enyonam.webp";
+import daniel from "../assets/developers/daniel.webp";
+import esi from "../assets/developers/esi.webp";
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -96,11 +96,11 @@ export default function GhanaTechHub() {
     return (
         <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
 
-            {/* HERO SECTION */}
+            
 
             <section className="relative px-6 pt-24 pb-20 border-b border-zinc-800 overflow-hidden">
 
-                {/* GLOWS */}
+                
 
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-yellow-500/10 blur-[120px] rounded-full"></div>
 
@@ -108,13 +108,13 @@ export default function GhanaTechHub() {
 
                 <div className="max-w-7xl mx-auto relative z-10">
 
-                    {/* BADGE */}
+                    
 
                     <div className="inline-block bg-yellow-500/10 border border-yellow-500/20 text-yellow-300 px-5 py-3 rounded-full text-sm backdrop-blur-xl">
                         🇬🇭 Ghana's Fastest Growing Developer Community
                     </div>
 
-                    {/* TITLE */}
+                    
 
                     <h1 className="text-6xl lg:text-8xl font-medium tracking-tight leading-none mt-8">
                         Connecting
@@ -124,7 +124,7 @@ export default function GhanaTechHub() {
                         Developers
                     </h1>
 
-                    {/* DESCRIPTION */}
+                    
 
                     <p className="text-zinc-400 text-xl mt-8 max-w-3xl leading-relaxed">
                         Ghana Tech Hub is a modern African developer community helping
@@ -132,7 +132,7 @@ export default function GhanaTechHub() {
                         impactful products across Ghana and beyond.
                     </p>
 
-                    {/* TAGS */}
+                    
 
                     <div className="flex flex-wrap gap-4 mt-10">
 
@@ -154,7 +154,7 @@ export default function GhanaTechHub() {
 
                     </div>
 
-                    {/* STATS */}
+                    
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
 
@@ -212,7 +212,7 @@ export default function GhanaTechHub() {
 
             </section>
 
-            {/* SEARCH SECTION */}
+            
 
             <section className="px-6 py-16">
 
@@ -232,7 +232,7 @@ export default function GhanaTechHub() {
 
                         </div>
 
-                        {/* SEARCH */}
+                        
 
                         <div className="flex gap-4">
 
@@ -256,7 +256,7 @@ export default function GhanaTechHub() {
 
             </section>
 
-            {/* DEVELOPERS */}
+            
 
             <section className="px-6 pb-24">
 
@@ -287,7 +287,7 @@ export default function GhanaTechHub() {
                                 className="group relative bg-[#121212] border border-zinc-800 rounded-[32px] overflow-hidden hover:border-yellow-500/30 transition duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-500/10"
                             >
 
-                                {/* IMAGE */}
+                                
 
                                 <div className="relative h-80 overflow-hidden">
 
@@ -299,7 +299,7 @@ export default function GhanaTechHub() {
 
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/20 to-transparent"></div>
 
-                                    {/* AVAILABILITY */}
+                                    
 
                                     <div className="absolute bottom-6 left-6">
 
@@ -311,7 +311,7 @@ export default function GhanaTechHub() {
 
                                 </div>
 
-                                {/* CONTENT */}
+                                
 
                                 <div className="p-8">
 
@@ -333,7 +333,7 @@ export default function GhanaTechHub() {
 
                                     </div>
 
-                                    {/* INFO */}
+                                    
 
                                     <div className="mt-4 space-y-2">
 
@@ -351,7 +351,7 @@ export default function GhanaTechHub() {
 
                                     </div>
 
-                                    {/* STACK */}
+                                    
 
                                     <div className="flex flex-wrap gap-3 mt-8">
 
@@ -368,7 +368,7 @@ export default function GhanaTechHub() {
 
                                     </div>
 
-                                    {/* STATS */}
+                                    
 
                                     <div className="flex items-center justify-between mt-10 pt-6 border-t border-zinc-800">
 
@@ -410,7 +410,7 @@ export default function GhanaTechHub() {
 
                                     </div>
 
-                                    {/* BUTTONS */}
+                                    
 
                                     <div className="flex gap-4 mt-10">
 

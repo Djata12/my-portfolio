@@ -41,19 +41,19 @@
     return (
         <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
         
-        {/* BACKGROUND */}
+        
 
         <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-yellow-500/10 blur-[120px] rounded-full"></div>
 
         <div className="fixed bottom-0 right-0 w-[500px] h-[500px] bg-green-500/10 blur-[120px] rounded-full"></div>
 
-        {/* HERO */}
+        
 
         <section className="relative px-6 py-24 border-b border-zinc-800 z-10">
 
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
-            {/* LEFT */}
+            
 
             <div>
 
@@ -74,7 +74,7 @@
                 securely through a modern API infrastructure.
                 </p>
 
-                {/* STATS */}
+                
 
                 <div className="grid grid-cols-3 gap-6 mt-14">
 
@@ -112,7 +112,7 @@
 
             </div>
 
-            {/* PAYMENT CARD */}
+            
 
             <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-[40px] p-10 shadow-2xl shadow-black/30">
 
@@ -134,7 +134,7 @@
 
                 </div>
 
-                {/* NETWORK */}
+                
 
                 <div className="mb-6">
 
@@ -154,7 +154,7 @@
 
                 </div>
 
-                {/* PHONE */}
+                
 
                 <div className="mb-6">
 
@@ -181,7 +181,7 @@
 
                 </div>
 
-                {/* AMOUNT */}
+                
 
                 <div>
 
@@ -199,7 +199,7 @@
 
                 </div>
 
-                {/* BUTTON */}
+                
 
                 <button
                 onClick={handlePayment}
@@ -208,7 +208,7 @@
                 {loading ? "Processing Payment..." : "Pay Now"}
                 </button>
 
-                {/* DISCLAIMER */}
+                
 
                 <div className="flex items-start gap-3 mt-6 bg-yellow-500/10 border border-yellow-500/20 p-5 rounded-2xl">
 

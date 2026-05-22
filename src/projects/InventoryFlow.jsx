@@ -116,14 +116,14 @@
     return (
         <div className="min-h-screen bg-[#09090b] text-white">
 
-        {/* CART SIDEBAR */}
+        
 
         {cartOpen && (
             <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm">
 
             <div className="absolute right-0 top-0 h-full w-full md:w-[450px] bg-[#09090b] border-l border-zinc-800 p-8 overflow-y-auto">
 
-                {/* HEADER */}
+                
 
                 <div className="flex items-center justify-between mb-10">
 
@@ -148,7 +148,7 @@
 
                 </div>
 
-                {/* EMPTY STATE */}
+                
 
                 {cart.length === 0 && (
                 <div className="text-center py-20">
@@ -169,7 +169,7 @@
                 </div>
                 )}
 
-                {/* CART ITEMS */}
+                
 
                 <div className="space-y-6">
 
@@ -210,7 +210,7 @@
 
                 </div>
 
-                {/* TOTAL */}
+                
 
                 {cart.length > 0 && (
                 <div className="mt-10 border-t border-zinc-800 pt-8">
@@ -242,7 +242,7 @@
             </div>
         )}
 
-        {/* TOPBAR */}
+        
 
         <header className="border-b border-zinc-800 sticky top-0 z-40 backdrop-blur-xl bg-[#09090b]/80">
 
@@ -260,7 +260,7 @@
 
             </div>
 
-            {/* SEARCH */}
+            
 
             <div className="relative hidden md:block">
 
@@ -279,7 +279,7 @@
 
             </div>
 
-            {/* CART BUTTON */}
+            
 
             <button
                 onClick={() => setCartOpen(true)}
@@ -296,7 +296,7 @@
 
         </header>
 
-        {/* HERO */}
+        
 
         <section className="px-6 py-16 border-b border-zinc-800">
 
@@ -335,7 +335,7 @@
 
             </div>
 
-            {/* STATS */}
+            
 
             <div className="grid md:grid-cols-4 gap-6 mt-16">
 
@@ -403,7 +403,7 @@
 
         </section>
 
-        {/* PRODUCTS */}
+        
 
         <section className="px-6 py-20">
 
@@ -429,7 +429,7 @@
 
             </div>
 
-            {/* PRODUCT GRID */}
+            
 
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
@@ -489,7 +489,7 @@
 
         </section>
 
-        {/* CHECKOUT */}
+        
 
         <section className="px-6 pb-24">
 
@@ -518,7 +518,7 @@
 
                 </div>
 
-                {/* RIGHT */}
+                
 
                 <div>
 
@@ -534,7 +534,7 @@
 
                 </div>
 
-                {/* PAYMENT BUTTON */}
+                
 
                 <button
                 onClick={handleMoMoPayment}

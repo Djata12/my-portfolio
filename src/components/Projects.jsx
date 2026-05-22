@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import inventoryImg from "../assets/projects/InventoryFlow.png";
-import momoImg from "../assets/projects/MoMoBridgeAPI.png";
-import techhubImg from "../assets/projects/GhanaTechHub.png";
+import inventoryImg from "../assets/projects/InventoryFlow.webp";
+import momoImg from "../assets/projects/MoMoBridgeAPI.webp";
+import techhubImg from "../assets/projects/GhanaTechHub.webp";
 
 const projects = [
 {
@@ -41,7 +41,7 @@ return (
     >
     <div className="max-w-7xl mx-auto animate-fade-up">
 
-        {/* HEADER */}
+        
 
         <div className="mb-16 animate-fadeIn">
 
@@ -55,7 +55,7 @@ return (
 
         </div>
 
-        {/* PROJECT GRID */}
+        
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
@@ -66,23 +66,23 @@ return (
             className="group relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-[32px] hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500"
             >
 
-            {/* HOVER GLOW */}
+            
 
             <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 transition duration-500 pointer-events-none"></div>
 
-            {/* IMAGE */}
+            
 
             <div className="h-64 overflow-hidden">
 
                 <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                className="w-full h-full object-cover transform-gpu hover:scale-105 transition duration-300"
                 />
 
             </div>
 
-            {/* CONTENT */}
+            
 
             <div className="relative z-10 p-8">
 
@@ -94,7 +94,7 @@ return (
                 {project.description}
                 </p>
 
-                {/* STACK */}
+                
 
                 <div className="flex flex-wrap gap-3 mt-8">
 
@@ -111,7 +111,7 @@ return (
 
                 </div>
 
-                {/* BUTTON */}
+                
 
                 <Link
                 to={project.link}

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 import Home from "./pages/Home";
 
 import InventoryFlow from "./projects/InventoryFlow";
@@ -19,14 +20,14 @@ export default function App() {
 
       <Routes>
 
-        {/* HOME */}
+        
 
         <Route
           path="/"
           element={<Home />}
         />
 
-        {/* PROJECT PAGES */}
+        
 
         <Route
           path="/projects/inventoryflow"

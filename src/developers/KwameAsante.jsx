@@ -1,16 +1,16 @@
-    import kwame from "../assets/developers/kwame.jpg";
+    import kwame from "../assets/developers/kwame.webp";
 
     export default function KwameAsante() {
     return (
         <div className="min-h-screen bg-[#09090b] text-white">
 
-        {/* HERO */}
+        
 
         <section className="px-6 py-20 border-b border-zinc-800">
 
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* IMAGE */}
+            
 
             <div>
 
@@ -22,7 +22,7 @@
 
             </div>
 
-            {/* INFO */}
+            
 
             <div>
 
@@ -46,7 +46,7 @@
                 CSS and modern JavaScript technologies.
                 </p>
 
-                {/* STACK */}
+                
 
                 <div className="flex flex-wrap gap-4 mt-10">
 
@@ -68,7 +68,7 @@
 
                 </div>
 
-                {/* BUTTONS */}
+                
 
                 <div className="flex gap-4 mt-12">
 
@@ -94,7 +94,7 @@
 
         </section>
 
-        {/* EXPERIENCE */}
+        
 
         <section className="px-6 py-20">
 

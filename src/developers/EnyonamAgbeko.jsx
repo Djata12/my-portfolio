@@ -1,22 +1,22 @@
-    import enyonam from "../assets/developers/enyonam.jpg";
+    import enyonam from "../assets/developers/enyonam.webp";
 
     export default function EnyonamAgbeko() {
     return (
         <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
 
-        {/* BACKGROUND GLOWS */}
+        
 
         <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-yellow-500/10 blur-[120px] rounded-full"></div>
 
         <div className="fixed bottom-0 right-0 w-[500px] h-[500px] bg-green-500/10 blur-[120px] rounded-full"></div>
 
-        {/* HERO SECTION */}
+        
 
         <section className="relative px-6 py-20 border-b border-zinc-800 z-10">
 
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
-            {/* IMAGE */}
+            
 
             <div className="relative">
 
@@ -30,11 +30,11 @@
 
             </div>
 
-            {/* INFO */}
+            
 
             <div className="relative z-10">
 
-                {/* STATUS */}
+                
 
                 <div className="inline-flex items-center gap-3 bg-green-500/10 border border-green-500/20 text-green-400 px-5 py-3 rounded-full text-sm">
 
@@ -44,7 +44,7 @@
 
                 </div>
 
-                {/* NAME */}
+                
 
                 <h1 className="text-6xl lg:text-8xl font-black mt-8 leading-none">
 
@@ -54,13 +54,13 @@
 
                 </h1>
 
-                {/* ROLE */}
+                
 
                 <p className="text-yellow-400 text-2xl mt-6 font-semibold">
                 Mobile Developer
                 </p>
 
-                {/* LOCATION */}
+                
 
                 <div className="flex items-center gap-3 mt-6 text-zinc-400">
 
@@ -72,7 +72,7 @@
 
                 </div>
 
-                {/* BIO */}
+                
 
                 <p className="text-zinc-400 text-xl leading-relaxed mt-10 max-w-2xl">
 
@@ -83,7 +83,7 @@
 
                 </p>
 
-                {/* STATS */}
+                
 
                 <div className="grid grid-cols-3 gap-6 mt-12">
 
@@ -125,7 +125,7 @@
 
                 </div>
 
-                {/* STACK */}
+                
 
                 <div className="flex flex-wrap gap-4 mt-12">
 
@@ -155,7 +155,7 @@
 
                 </div>
 
-                {/* BUTTONS */}
+                
 
                 <div className="flex flex-wrap gap-4 mt-14">
 
@@ -181,7 +181,7 @@
 
         </section>
 
-        {/* EXPERIENCE SECTION */}
+        
 
         <section className="relative px-6 py-24 z-10">
 
@@ -205,7 +205,7 @@
 
             <div className="space-y-8">
 
-                {/* EXPERIENCE CARD */}
+                
 
                 <div className="bg-zinc-900/80 border border-zinc-800 rounded-[32px] p-10 hover:border-yellow-500/20 transition">
 
@@ -239,7 +239,7 @@
 
                 </div>
 
-                {/* EXPERIENCE CARD */}
+                
 
                 <div className="bg-zinc-900/80 border border-zinc-800 rounded-[32px] p-10 hover:border-yellow-500/20 transition">
 

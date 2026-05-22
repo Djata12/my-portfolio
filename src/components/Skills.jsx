@@ -77,19 +77,19 @@
                     className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-300"
                 >
     
-                    {/* ICON */}
+                    
     
                     <div className="mb-6">
                     {skill.icon}
                     </div>
     
-                    {/* TITLE */}
+                    
     
                     <h3 className="text-2xl font-medium tracking-tight">
                     {skill.title}
                     </h3>
     
-                    {/* TECH STACK */}
+                    
     
                     <div className="flex flex-wrap gap-3 mt-8">
     

@@ -90,18 +90,18 @@ export default function Contact() {
 
                 </div>
 
-                {/* FORM */}
+                
 
                 <form
                     onSubmit={handleSubmit}
                     className="bg-zinc-900 border border-blue-500/20 rounded-[40px] p-8 md:p-10 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
                 >
 
-                    {/* TOP GRID */}
+                    
 
                     <div className="grid md:grid-cols-2 gap-8">
 
-                        {/* NAME */}
+                        
 
                         <div>
 
@@ -121,7 +121,7 @@ export default function Contact() {
 
                         </div>
 
-                        {/* EMAIL */}
+                        
 
                         <div>
 
@@ -143,7 +143,7 @@ export default function Contact() {
 
                     </div>
 
-                    {/* COMPANY */}
+                    
 
                     <div className="mt-8">
 
@@ -162,7 +162,7 @@ export default function Contact() {
 
                     </div>
 
-                    {/* MESSAGE */}
+                    
 
                     <div className="mt-8">
 
@@ -182,7 +182,7 @@ export default function Contact() {
 
                     </div>
 
-                    {/* BUTTON */}
+                    
 
                     <button
                         type="submit"

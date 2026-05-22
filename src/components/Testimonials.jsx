@@ -1,6 +1,6 @@
-import michael from "../assets/testimonials/michael.jpg";
-import akosua from "../assets/testimonials/akosua.jpg";
-import david from "../assets/testimonials/david.jpg";
+import michael from "../assets/testimonials/michael.webp";
+import akosua from "../assets/testimonials/akosua.webp";
+import david from "../assets/testimonials/david.webp";
 
 const testimonials = [
     {
@@ -43,7 +43,7 @@ export default function Testimonials() {
 
         <section className="relative py-32 px-6 bg-[#09090b] text-white overflow-hidden">
 
-            {/* BACKGROUND GLOWS */}
+            
 
             <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[140px] rounded-full"></div>
 
@@ -51,7 +51,7 @@ export default function Testimonials() {
 
             <div className="max-w-7xl mx-auto relative z-10">
 
-                {/* HEADER */}
+                
 
                 <div className="text-center mb-20">
 
@@ -70,7 +70,7 @@ export default function Testimonials() {
 
                 </div>
 
-                {/* GRID */}
+                
 
                 <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
@@ -81,7 +81,7 @@ export default function Testimonials() {
                             className="group bg-zinc-900/90 backdrop-blur-xl border border-zinc-800 rounded-[32px] p-8 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-3"
                         >
 
-                            {/* TOP */}
+                            
 
                             <div className="flex items-center gap-4">
 
@@ -119,7 +119,7 @@ export default function Testimonials() {
 
                             </div>
 
-                            {/* LOCATION */}
+                            
 
                             <div className="mt-5">
 
@@ -129,7 +129,7 @@ export default function Testimonials() {
 
                             </div>
 
-                            {/* STARS */}
+                            
 
                             <div className="flex gap-1 mt-6 text-yellow-400 text-xl">
 
@@ -141,7 +141,7 @@ export default function Testimonials() {
 
                             </div>
 
-                            {/* REVIEW */}
+                            
 
                             <p className="text-zinc-400 leading-relaxed mt-6 text-lg">
                                 “{item.review}”

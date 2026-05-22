@@ -6,7 +6,7 @@ export default function Navbar() {
 
                 <div className="flex items-center justify-between px-8 py-4 rounded-b-3xl border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur-xl shadow-2xl shadow-black/20">
 
-                    {/* LOGO */}
+                    
 
                     <a
                         href="#"
@@ -16,7 +16,7 @@ export default function Navbar() {
                         <span className="text-blue-500">.</span>
                     </a>
 
-                    {/* NAV LINKS */}
+                    
 
                     <div className="hidden md:flex items-center gap-10 text-sm text-zinc-400">
 

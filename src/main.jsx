@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import ReactGA from "react-ga4";
 
-ReactGA.initialize("G-QWBK2JN6B6");
+import { Analytics } from "@vercel/analytics/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <App />
+        <Analytics />
     </React.StrictMode>
-);
+    );

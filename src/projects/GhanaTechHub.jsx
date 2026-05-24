@@ -86,6 +86,14 @@ export default function GhanaTechHub() {
 
     const [search, setSearch] = useState("");
 
+    const filteredDevelopers = developers.filter(
+        (dev) =>
+            dev.name.toLowerCase().includes(search.toLowerCase()) ||
+            dev.role.toLowerCase().includes(search.toLowerCase()) ||
+            dev.location.toLowerCase().includes(search.toLowerCase()) ||
+            dev.stack.join(" ").toLowerCase().includes(search.toLowerCase())
+    );
+
     return (
 
         <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
@@ -226,9 +234,9 @@ export default function GhanaTechHub() {
                                 className="bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4 w-full sm:w-[320px] min-w-0 outline-none focus:border-yellow-500 transition"
                             />
 
-                            <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-2xl font-medium tracking-tight transition shadow-lg hover:shadow-yellow-500/20 whitespace-nowrap">
-                                Search
-                            </button>
+                            <div className="bg-yellow-500 text-black px-8 py-4 rounded-2xl font-medium tracking-tight whitespace-nowrap flex items-center justify-center shadow-lg shadow-yellow-500/20">
+                                Live Search
+                            </div>
 
                         </div>
 
@@ -244,9 +252,25 @@ export default function GhanaTechHub() {
 
                 <div className="max-w-7xl mx-auto">
 
+                    {filteredDevelopers.length === 0 && (
+
+                        <div className="text-center py-20">
+
+                            <h2 className="text-4xl font-medium tracking-tight">
+                                No Developers Found
+                            </h2>
+
+                            <p className="text-zinc-500 mt-4">
+                                Try searching for React, Backend, UI/UX, Accra...
+                            </p>
+
+                        </div>
+
+                    )}
+
                     <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-                        {developers.map((dev) => (
+                        {filteredDevelopers.map((dev) => (
 
                             <div
                                 key={dev.name}

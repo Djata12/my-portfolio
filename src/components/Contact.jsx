@@ -66,7 +66,7 @@ export default function Contact() {
 
         <section
             id="contact"
-            className="py-32 px-6 fade-up bg-[#09090b] text-white"
+            className="py-32 px-6 fade-up bg-white dark:bg-[#09090b] text-black dark:text-white"
         >
 
             <div className="max-w-5xl mx-auto">
@@ -83,7 +83,7 @@ export default function Contact() {
                         Let’s Build Something Amazing
                     </h2>
 
-                    <p className="text-zinc-400 mt-6 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-zinc-600 dark:text-zinc-400 mt-6 text-lg max-w-2xl mx-auto leading-relaxed">
                         Have a startup idea, freelance project or developer opportunity?
                         Send me a message and I’ll get back to you quickly.
                     </p>
@@ -94,7 +94,7 @@ export default function Contact() {
 
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-zinc-900 border border-blue-500/20 rounded-[40px] p-8 md:p-10 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
+                    className="bg-zinc-100 dark:bg-zinc-900 border border-blue-500/20 rounded-[40px] p-8 md:p-10 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
                 >
 
                     
@@ -105,7 +105,7 @@ export default function Contact() {
 
                         <div>
 
-                            <label className="block mb-3 text-zinc-300 font-semibold">
+                            <label className="block mb-3 text-zinc-700 dark:text-zinc-300 font-semibold">
                                 Full Name
                             </label>
 
@@ -116,7 +116,7 @@ export default function Contact() {
                                 value={form.name}
                                 onChange={handleChange}
                                 placeholder="John Doe"
-                                className="w-full bg-[#09090b] border border-zinc-700 rounded-2xl px-5 py-4 text-white placeholder:text-zinc-500 outline-none focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/10 transition-all duration-300"
+                                className="w-full bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-800 rounded-2xl px-5 py-4 text-black dark:text-white placeholder:text-zinc-500 outline-none focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/10 transition-all duration-300"
                             />
 
                         </div>
@@ -125,7 +125,7 @@ export default function Contact() {
 
                         <div>
 
-                            <label className="block mb-3 text-zinc-300 font-semibold">
+                            <label className="block mb-3 text-zinc-700 dark:text-zinc-300 font-semibold">
                                 Email Address
                             </label>
 
@@ -136,7 +136,7 @@ export default function Contact() {
                                 value={form.email}
                                 onChange={handleChange}
                                 placeholder="john@example.com"
-                                className="w-full bg-[#09090b] border border-zinc-700 rounded-2xl px-5 py-4 text-white placeholder:text-zinc-500 outline-none focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/10 transition-all duration-300"
+                                className="w-full bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-700 rounded-2xl px-5 py-4 text-black dark:text-white placeholder:text-zinc-500 outline-none focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/10 transition-all duration-300"
                             />
 
                         </div>
@@ -147,7 +147,7 @@ export default function Contact() {
 
                     <div className="mt-8">
 
-                        <label className="block mb-3 text-zinc-300 font-semibold">
+                        <label className="block mb-3 text-zinc-700 dark:text-zinc-300 font-semibold">
                             Company / Brand
                         </label>
 
@@ -157,7 +157,7 @@ export default function Contact() {
                             value={form.company}
                             onChange={handleChange}
                             placeholder="Startup or Company Name"
-                            className="w-full bg-[#09090b] border border-zinc-700 rounded-2xl px-5 py-4 text-white placeholder:text-zinc-500 outline-none focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/10 transition-all duration-300"
+                            className="w-full bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-700 rounded-2xl px-5 py-4 text-black dark:text-white placeholder:text-zinc-500 outline-none focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/10 transition-all duration-300"
                         />
 
                     </div>
@@ -166,7 +166,7 @@ export default function Contact() {
 
                     <div className="mt-8">
 
-                        <label className="block mb-3 text-zinc-300 font-semibold">
+                        <label className="block mb-3 text-zinc-700 dark:text-zinc-300 font-semibold">
                             Project Details
                         </label>
 
@@ -177,7 +177,7 @@ export default function Contact() {
                             value={form.message}
                             onChange={handleChange}
                             placeholder="Tell me about your project..."
-                            className="w-full bg-[#09090b] border border-zinc-700 rounded-2xl px-5 py-4 text-white placeholder:text-zinc-500 outline-none focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/10 transition-all duration-300 resize-none"
+                            className="w-full bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-700 rounded-2xl px-5 py-4 text-black dark:text-white placeholder:text-zinc-500 outline-none focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/10 transition-all duration-300 resize-none"
                         />
 
                     </div>

@@ -98,37 +98,32 @@
         return;
         }
 
-        alert(
-        `MoMo Payment Successful!
+        alert(`MoMo Payment Successful!
 
     Amount Paid: GH₵ ${total}
 
     This is a demo payment system.
     No real charges will be made.
 
-    Thank you for shopping with InventoryFlow.`
-        );
+    Thank you for shopping with InventoryFlow.`);
 
         setCart([]);
         setCartOpen(false);
     };
 
     return (
-        <div className="min-h-screen bg-[#09090b] text-white">
+        <div className="min-h-screen bg-white dark:bg-[#09090b] text-black dark:text-white">
 
-        
+        {/* CART SIDEBAR */}
 
         {cartOpen && (
-            <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm">
+            <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md">
 
-            <div className="absolute right-0 top-0 h-full w-full md:w-[450px] bg-[#09090b] border-l border-zinc-800 p-8 overflow-y-auto">
-
-                
+            <div className="absolute right-0 top-0 h-full w-full md:w-[450px] bg-white dark:bg-[#09090b] border-l border-zinc-300 dark:border-zinc-800 p-8 overflow-y-auto">
 
                 <div className="flex items-center justify-between mb-10">
 
                 <div>
-
                     <h2 className="text-4xl font-medium tracking-tight">
                     Cart
                     </h2>
@@ -136,26 +131,25 @@
                     <p className="text-zinc-500 mt-2">
                     {cart.length} Items
                     </p>
-
                 </div>
 
                 <button
                     onClick={() => setCartOpen(false)}
-                    className="bg-zinc-800 p-3 rounded-2xl hover:bg-zinc-700 transition"
+                    className="bg-zinc-200 dark:bg-zinc-800 p-3 rounded-2xl hover:bg-zinc-300 dark:hover:bg-zinc-700 transition"
                 >
                     <X />
                 </button>
 
                 </div>
 
-                
+                {/* EMPTY CART */}
 
                 {cart.length === 0 && (
                 <div className="text-center py-20">
 
                     <ShoppingCart
                     size={70}
-                    className="mx-auto text-zinc-700"
+                    className="mx-auto text-zinc-400 dark:text-zinc-700"
                     />
 
                     <h3 className="text-3xl font-medium tracking-tight mt-6">
@@ -169,14 +163,14 @@
                 </div>
                 )}
 
-                
+                {/* CART ITEMS */}
 
                 <div className="space-y-6">
 
                 {cart.map((item, index) => (
                     <div
                     key={index}
-                    className="bg-zinc-900 border border-zinc-800 rounded-3xl p-5 flex gap-4"
+                    className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-3xl p-5 flex gap-4"
                     >
 
                     <img
@@ -191,7 +185,7 @@
                         {item.name}
                         </h3>
 
-                        <p className="text-yellow-400 mt-2">
+                        <p className="text-yellow-500 dark:text-yellow-400 mt-2">
                         GH₵ {item.price}
                         </p>
 
@@ -210,10 +204,10 @@
 
                 </div>
 
-                
+                {/* TOTAL */}
 
                 {cart.length > 0 && (
-                <div className="mt-10 border-t border-zinc-800 pt-8">
+                <div className="mt-10 border-t border-zinc-300 dark:border-zinc-800 pt-8">
 
                     <div className="flex items-center justify-between">
 
@@ -221,7 +215,7 @@
                         Total
                     </h3>
 
-                    <h3 className="text-3xl font-medium tracking-tight text-yellow-400">
+                    <h3 className="text-3xl font-medium tracking-tight text-yellow-500 dark:text-yellow-400">
                         GH₵ {total}
                     </h3>
 
@@ -242,9 +236,9 @@
             </div>
         )}
 
-        
+        {/* HEADER */}
 
-        <header className="border-b border-zinc-800 sticky top-0 z-40 backdrop-blur-xl bg-[#09090b]/80">
+        <header className="border-b border-zinc-300 dark:border-zinc-800 sticky top-0 z-40 backdrop-blur-xl bg-white/80 dark:bg-[#09090b]/80">
 
             <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
@@ -260,7 +254,7 @@
 
             </div>
 
-            
+            {/* SEARCH */}
 
             <div className="relative hidden md:block">
 
@@ -274,12 +268,12 @@
                 placeholder="Search products..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="bg-zinc-900 border border-zinc-800 rounded-2xl pl-12 pr-5 py-3 w-[320px] outline-none focus:border-yellow-500 transition"
+                className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-2xl pl-12 pr-5 py-3 w-[320px] outline-none focus:border-yellow-500 transition"
                 />
 
             </div>
 
-            
+            {/* CART BUTTON */}
 
             <button
                 onClick={() => setCartOpen(true)}
@@ -296,9 +290,9 @@
 
         </header>
 
-        
+        {/* ANALYTICS */}
 
-        <section className="px-6 py-16 border-b border-zinc-800">
+        <section className="px-6 py-16 border-b border-zinc-300 dark:border-zinc-800">
 
             <div className="max-w-7xl mx-auto">
 
@@ -335,11 +329,11 @@
 
             </div>
 
-            
+            {/* STATS */}
 
             <div className="grid md:grid-cols-4 gap-6 mt-16">
 
-                <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-yellow-500/20 transition duration-300">
+                <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-3xl p-8 hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300">
 
                 <Package size={35} className="text-yellow-400" />
 
@@ -353,7 +347,7 @@
 
                 </div>
 
-                <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-green-500/20 transition duration-300">
+                <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-3xl p-8 hover:border-green-500/30 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
 
                 <TrendingUp size={35} className="text-green-400" />
 
@@ -367,7 +361,7 @@
 
                 </div>
 
-                <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-blue-500/20 transition duration-300">
+                <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-3xl p-8 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
 
                 <div className="text-blue-400 text-4xl font-bold">
                     ₵
@@ -383,7 +377,7 @@
 
                 </div>
 
-                <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-purple-500/20 transition duration-300">
+                <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-3xl p-8 hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
 
                 <Boxes size={35} className="text-purple-400" />
 
@@ -403,7 +397,7 @@
 
         </section>
 
-        
+        {/* PRODUCTS */}
 
         <section className="px-6 py-20">
 
@@ -413,7 +407,7 @@
 
                 <div>
 
-                <p className="text-yellow-400 font-semibold mb-3">
+                <p className="text-yellow-500 dark:text-yellow-400 font-semibold mb-3">
                     Product Inventory
                 </p>
 
@@ -423,20 +417,18 @@
 
                 </div>
 
-                <div className="bg-zinc-900 border border-zinc-800 px-5 py-3 rounded-2xl text-zinc-400">
+                <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 px-5 py-3 rounded-2xl text-zinc-600 dark:text-zinc-400">
                 {filteredProducts.length} Products
                 </div>
 
             </div>
-
-            
 
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
                 {filteredProducts.map((product) => (
                 <div
                     key={product.id}
-                    className="bg-zinc-900 border border-zinc-800 rounded-[32px] overflow-hidden hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all hover:-translate-y-2 duration-500"
+                    className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[32px] overflow-hidden hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all hover:-translate-y-2 duration-500"
                 >
 
                     <div className="h-72 overflow-hidden">
@@ -453,7 +445,7 @@
 
                     <div className="flex items-center justify-between">
 
-                        <span className="bg-zinc-800 px-4 py-2 rounded-full text-sm text-yellow-400">
+                        <span className="bg-zinc-200 dark:bg-zinc-800 px-4 py-2 rounded-full text-sm text-yellow-500 dark:text-yellow-400">
                         {product.category}
                         </span>
 
@@ -467,7 +459,7 @@
                         {product.name}
                     </h3>
 
-                    <p className="text-2xl text-yellow-400 font-semibold mt-4">
+                    <p className="text-2xl text-yellow-500 dark:text-yellow-400 font-semibold mt-4">
                         GH₵ {product.price}
                     </p>
 
@@ -489,21 +481,19 @@
 
         </section>
 
-        
+        {/* CHECKOUT */}
 
         <section className="px-6 pb-24">
 
             <div className="max-w-7xl mx-auto">
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-[40px] p-10 hover:border-yellow-500/20 transition duration-500">
+            <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[40px] p-10 hover:border-yellow-500/20 transition duration-500">
 
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
 
-                {/* LEFT */}
-
                 <div>
 
-                    <p className="text-yellow-400 font-semibold mb-3">
+                    <p className="text-yellow-500 dark:text-yellow-400 font-semibold mb-3">
                     Shopping Cart
                     </p>
 
@@ -518,23 +508,19 @@
 
                 </div>
 
-                
-
                 <div>
 
                     <p className="text-zinc-500 mb-2">
                     Total Amount
                     </p>
 
-                    <h2 className="text-5xl font-medium tracking-tight text-yellow-400">
+                    <h2 className="text-5xl font-medium tracking-tight text-yellow-500 dark:text-yellow-400">
                     GH₵ {total}
                     </h2>
 
                 </div>
 
                 </div>
-
-                
 
                 <button
                 onClick={handleMoMoPayment}

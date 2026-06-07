@@ -9,7 +9,7 @@ export default function Footer() {
 
     return (
 
-        <footer className="relative border-t border-zinc-800 bg-[#09090b] text-white overflow-hidden">
+        <footer className="relative border-t border-zinc-800 bg-white dark:bg-[#09090b] text-black dark:text-white overflow-hidden">
 
             {/* GLOW */}
 
@@ -29,7 +29,7 @@ export default function Footer() {
                             Benjamin Djata
                         </h2>
 
-                        <p className="text-zinc-400 mt-6 leading-relaxed max-w-md">
+                        <p className="text-zinc-600 dark:text-zinc-400 mt-6 leading-relaxed max-w-md">
                             Building modern web applications, scalable APIs
                             and premium digital experiences for startups,
                             businesses and ambitious founders.
@@ -43,7 +43,7 @@ export default function Footer() {
                                 href="https://github.com/Djata12"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 flex items-center justify-center transition-all duration-300"
+                                className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 flex items-center justify-center transition-all duration-300"
                             >
                                 <Github size={20} />
                             </a>
@@ -52,14 +52,14 @@ export default function Footer() {
                                 href="https://www.linkedin.com/in/jamin-nii-annang-djata-4b0838283/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 flex items-center justify-center transition-all duration-300"
+                                className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 flex items-center justify-center transition-all duration-300"
                             >
                                 <Linkedin size={20} />
                             </a>
 
                             <a
                                 href="mailto:jamindjata@gmail.com"
-                                className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 flex items-center justify-center transition-all duration-300"
+                                className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 flex items-center justify-center transition-all duration-300"
                             >
                                 <Mail size={20} />
                             </a>
@@ -145,7 +145,7 @@ export default function Footer() {
 
                     <a
                         href="#top"
-                        className="bg-zinc-900 border border-zinc-800 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 px-5 py-3 rounded-2xl text-sm transition-all duration-300"
+                        className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 px-5 py-3 rounded-2xl text-sm transition-all duration-300"
                     >
                         Back To Top
                     </a>

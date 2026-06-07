@@ -41,7 +41,7 @@ export default function Testimonials() {
 
     return (
 
-        <section className="relative py-32 px-6 bg-[#09090b] text-white overflow-hidden">
+        <section className="relative py-32 px-6 bg-white dark:bg-[#09090b] text-black dark:text-white overflow-hidden">
 
             
 
@@ -63,7 +63,7 @@ export default function Testimonials() {
                         What People Say
                     </h2>
 
-                    <p className="text-zinc-400 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-zinc-600 dark:text-zinc-400 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
                         Feedback from founders, startups and teams I’ve worked
                         with on modern web applications and digital products.
                     </p>
@@ -78,7 +78,7 @@ export default function Testimonials() {
 
                         <div
                             key={item.name}
-                            className="group bg-zinc-900/90 backdrop-blur-xl border border-zinc-800 rounded-[32px] p-8 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-3"
+                            className="group bg-zinc-100 dark:bg-zinc-900/90 backdrop-blur-xl border border-zinc-300 dark:border-zinc-800 rounded-[32px] p-8 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-3"
                         >
 
                             

@@ -48,3 +48,7 @@ yarn-error.log*
 
 # vite
 .vite
+
+node_modules
+.env
+uploads

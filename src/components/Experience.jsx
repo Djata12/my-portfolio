@@ -141,7 +141,7 @@ export default function Experience() {
 
         <section
             id="experience"
-            className="relative py-32 px-6 bg-[#09090b] text-white overflow-hidden"
+            className="relative py-32 px-6 bg-white dark:bg-[#09090b] text-black dark:text-white overflow-hidden"
         >
 
             {/* GLOWS */}
@@ -164,7 +164,7 @@ export default function Experience() {
                         My Developer Path
                     </h2>
 
-                    <p className="text-zinc-400 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-zinc-600 dark:text-zinc-400 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
                         Building modern applications, scalable APIs and premium digital experiences.
                     </p>
 
@@ -176,7 +176,7 @@ export default function Experience() {
 
                     {/* CENTER LINE */}
 
-                    <div className="absolute left-4 md:left-1/2 top-0 h-full w-[2px] bg-zinc-800 -translate-x-1/2"></div>
+                    <div className="absolute left-4 md:left-1/2 top-0 h-full w-[2px] bg-zinc-100 dark:bg-zinc-900 -translate-x-1/2"></div>
 
                     <div className="space-y-16">
 
@@ -199,7 +199,7 @@ export default function Experience() {
 
                                 <div className="w-[calc(100%-4rem)] md:w-[46%] ml-14 md:ml-0">
 
-                                    <div className="bg-zinc-900/90 backdrop-blur-xl border border-zinc-800 rounded-3xl sm:rounded-[32px] p-8 hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/10 transform-gpu transition-all duration-300">
+                                    <div className="bg-zinc-100 dark:bg-zinc-900/90 backdrop-blur-xl border border-zinc-300 dark:border-zinc-800 rounded-3xl sm:rounded-[32px] p-8 hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/10 transform-gpu transition-all duration-300">
 
                                         {/* YEAR */}
 
@@ -233,7 +233,7 @@ export default function Experience() {
 
                                                 <div
                                                     key={tech.name}
-                                                    className="flex items-center gap-2 bg-zinc-800 border border-zinc-700 px-4 py-2 rounded-full text-sm text-zinc-300 hover:border-blue-500/30 transition"
+                                                    className="flex items-center gap-2 bg-white dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 px-4 py-2 rounded-full text-sm text-zinc-700 dark:text-zinc-300 hover:border-blue-500/30 transition"
                                                 >
 
                                                     <span className="text-lg">

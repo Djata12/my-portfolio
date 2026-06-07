@@ -28,107 +28,96 @@ const projects = [
     description:
     "Developer community platform connecting Ghanaian engineers, designers and startups.",
     image: techhubImg,
-    link: "/projects/ghanatechhub",
+    link: "/dashboard",
     stack: ["Community", "Networking", "React"],
 },
 ];
 
 export default function Projects() {
+
 return (
-    <section
-    id="projects"
-    className="py-32 px-6 fade-up bg-[#09090b] text-white"
-    >
-    <div className="max-w-7xl mx-auto animate-fade-up">
 
-        
+<section
+id="projects"
+className="py-32 px-6 bg-white dark:bg-[#09090b] text-black dark:text-white"
+>
 
-        <div className="mb-16 animate-fadeIn">
+<div className="max-w-7xl mx-auto">
 
-        <p className="text-blue-400 font-semibold mb-4">
-            Featured Projects
-        </p>
+<div className="mb-16">
 
-        <h2 className="text-5xl lg:text-6xl font-medium tracking-normal">
-            Recent Work
-        </h2>
+<p className="text-blue-400 font-semibold mb-4">
+Featured Projects
+</p>
 
-        </div>
+<h2 className="text-5xl lg:text-6xl font-medium tracking-normal">
+Recent Work
+</h2>
 
-        
+</div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+<div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-        {projects.map((project) => (
+{projects.map((project) => (
 
-            <div
-            key={project.title}
-            className="group relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-[32px] hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500"
-            >
+<div
+key={project.title}
+className="group relative overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[32px] hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500"
+>
 
-            
+<div className="h-64 overflow-hidden">
 
-            <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 transition duration-500 pointer-events-none"></div>
+<img
+src={project.image}
+alt={project.title}
+className="w-full h-full object-cover"
+/>
 
-            
+</div>
 
-            <div className="h-64 overflow-hidden">
+<div className="relative z-10 p-8">
 
-                <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transform-gpu hover:scale-105 transition duration-300"
-                />
+<h3 className="text-3xl font-medium tracking-tight">
+{project.title}
+</h3>
 
-            </div>
+<p className="text-zinc-600 dark:text-zinc-400 mt-5 leading-relaxed">
+{project.description}
+</p>
 
-            
+<div className="flex flex-wrap gap-3 mt-8">
 
-            <div className="relative z-10 p-8">
+{project.stack.map((item) => (
 
-            <h3 className="text-3xl font-medium tracking-tight">
-                {project.title}
-            </h3>
+<span
+key={item}
+className="bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 px-4 py-2 rounded-full text-sm text-zinc-700 dark:text-zinc-300"
+>
+{item}
+</span>
 
-                <p className="text-zinc-400 mt-5 leading-relaxed">
-                {project.description}
-                </p>
+))}
 
-                
+</div>
 
-                <div className="flex flex-wrap gap-3 mt-8">
+<Link
+to={project.link}
+className="block text-center mt-10 bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 rounded-2xl font-bold"
+>
+View Project
+</Link>
 
-                {project.stack.map((item) => (
+</div>
 
-                    <span
-                    key={item}
-                    className="bg-zinc-800 border border-zinc-700 px-4 py-2 rounded-full text-sm text-zinc-300"
-                    >
-                    {item}
-                    </span>
+</div>
 
-                ))}
+))}
 
-                </div>
+</div>
 
-                
+</div>
 
-                <Link
-                to={project.link}
-                className="block text-center mt-10 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white py-4 rounded-2xl font-bold shadow-lg shadow-blue-500/20 transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-                >
-                View Project
-                </Link>
+</section>
 
-            </div>
-
-            </div>
-
-        ))}
-
-        </div>
-
-    </div>
-    </section>
 );
 }

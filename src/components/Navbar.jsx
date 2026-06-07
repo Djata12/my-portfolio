@@ -1,28 +1,54 @@
 export default function Navbar() {
+
     return (
+
         <header className="w-full px-6 py-4">
 
             <nav className="max-w-7xl mx-auto">
 
-                <div className="flex items-center justify-between px-8 py-4 rounded-b-3xl border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur-xl shadow-2xl shadow-black/20">
+                <div
+                    className="
+                        flex items-center justify-between
+                        px-8 py-4 rounded-b-3xl
+                        border-b border-zinc-300 dark:border-zinc-800
+                        bg-white/80 dark:bg-[#09090b]/80
+                        backdrop-blur-xl
+                        shadow-2xl shadow-black/5 dark:shadow-black/20
+                        transition-colors duration-300
+                    "
+                >
 
-                    
+                    {/* LOGO */}
 
                     <a
                         href="#"
-                        className="text-2xl font-medium tracking-[0.18em] text-white"
+                        className="
+                            text-2xl font-medium tracking-[0.18em]
+                            text-black dark:text-white
+                            transition-colors duration-300
+                        "
                     >
                         Software Developer
                         <span className="text-blue-500">.</span>
                     </a>
 
-                    
+                    {/* NAV LINKS */}
 
-                    <div className="hidden md:flex items-center gap-10 text-sm text-zinc-400">
+                    <div
+                        className="
+                            hidden md:flex items-center gap-10
+                            text-sm
+                            text-zinc-600 dark:text-zinc-400
+                        "
+                    >
 
                         <a
                             href="#about"
-                            className="hover:text-white transition duration-300 relative group"
+                            className="
+                                hover:text-black dark:hover:text-white
+                                transition duration-300
+                                relative group
+                            "
                         >
                             About
 
@@ -31,7 +57,11 @@ export default function Navbar() {
 
                         <a
                             href="#skills"
-                            className="hover:text-white transition duration-300 relative group"
+                            className="
+                                hover:text-black dark:hover:text-white
+                                transition duration-300
+                                relative group
+                            "
                         >
                             Skills
 
@@ -40,7 +70,11 @@ export default function Navbar() {
 
                         <a
                             href="#projects"
-                            className="hover:text-white transition duration-300 relative group"
+                            className="
+                                hover:text-black dark:hover:text-white
+                                transition duration-300
+                                relative group
+                            "
                         >
                             Projects
 
@@ -49,7 +83,11 @@ export default function Navbar() {
 
                         <a
                             href="#contact"
-                            className="hover:text-white transition duration-300 relative group"
+                            className="
+                                hover:text-black dark:hover:text-white
+                                transition duration-300
+                                relative group
+                            "
                         >
                             Contact
 
@@ -63,5 +101,6 @@ export default function Navbar() {
             </nav>
 
         </header>
+
     );
 }

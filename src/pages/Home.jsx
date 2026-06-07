@@ -10,9 +10,17 @@ import Footer from "../components/Footer";
 import ScrollProgress from "../components/ScrollProgress";
 
 export default function Home() {
+
     return (
 
-        <div id="top" className="bg-[#09090b] text-white">
+        <div
+            id="top"
+            className="
+                bg-white text-black
+                dark:bg-[#09090b] dark:text-white
+                transition-colors duration-300
+            "
+        >
 
             {/* SCROLL PROGRESS */}
 
@@ -55,5 +63,6 @@ export default function Home() {
             <Footer />
 
         </div>
+
     );
 }

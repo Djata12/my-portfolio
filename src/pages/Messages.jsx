@@ -6,7 +6,7 @@ import axios from "axios";
 import { ArrowLeft, Mail, Send } from "lucide-react";
 import MentionRenderer from "../components/MentionRenderer";
 
-const socket = io("http://localhost:5000");
+const socket = io(import.meta.env.VITE_API_URL);
 
 export default function Messages() {
     const [conversations, setConversations] = useState([]);

@@ -19,6 +19,8 @@ const imageMap = {
     "esi.webp": esi,
 };
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function GhanaTechHub() {
     const [developers, setDevelopers] = useState([]);
     const [search, setSearch] = useState("");
@@ -26,7 +28,7 @@ export default function GhanaTechHub() {
     useEffect(() => {
         const fetchDevelopers = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/developers");
+                const response = await axios.get(`${API_URL}/api/developers`);
                 setDevelopers(response.data);
             } catch (error) {
                 console.log(error);

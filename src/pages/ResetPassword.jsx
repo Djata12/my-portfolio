@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function ResetPassword() {
     const { token } = useParams();
     const [password, setPassword] = useState("");
@@ -12,7 +14,7 @@ export default function ResetPassword() {
 
         try {
             const response = await axios.post(
-                `http://localhost:5000/api/auth/reset-password/${token}`,
+                `${API_URL}/api/auth/reset-password/${token}`,
                 { password }
             );
 

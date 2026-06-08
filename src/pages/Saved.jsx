@@ -11,6 +11,8 @@ import {
     ChevronDown,
 } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Saved() {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -26,7 +28,7 @@ export default function Saved() {
     const fetchSaved = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/posts/my-bookmarks",
+                `${API_URL}/api/posts/my-bookmarks`,
                 authConfig
             );
 
@@ -94,7 +96,7 @@ export default function Saved() {
                         >
                             <div className="flex gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center font-black shrink-0 overflow-hidden">
-                                    {post.user?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                                {post.user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                                         <img
                                             src={post.user.profileImage}
                                             alt={post.user.name}

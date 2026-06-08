@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function VerifyEmail() {
     const { token } = useParams();
     const [status, setStatus] = useState("Verifying your email...");
@@ -10,7 +12,7 @@ export default function VerifyEmail() {
         const verifyEmail = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/api/auth/verify-email/${token}`
+                    `${API_URL}/api/auth/verify-email/${token}`
                 );
 
                 setStatus(response.data.message);

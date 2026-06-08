@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 
 const socket = io(import.meta.env.VITE_API_URL);
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Avatar({ profile, size = "large" }) {
     const sizeClass =
@@ -28,7 +29,7 @@ function Avatar({ profile, size = "large" }) {
         <div
             className={`${sizeClass} border-4 border-zinc-100 dark:border-zinc-900 bg-yellow-500 text-black flex items-center justify-center font-black shadow-xl overflow-hidden shrink-0`}
         >
-            {profile?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+            {profile?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                 <img
                     src={profile.profileImage}
                     alt={profile.name}
@@ -86,7 +87,7 @@ export default function Profile() {
     const fetchCurrentUser = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/auth/profile",
+                `${API_URL}/api/auth/profile`,
                 authConfig
             );
 
@@ -99,7 +100,7 @@ export default function Profile() {
     const fetchProfile = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/api/users/${username}`
+                `${API_URL}/api/users/${username}`
             );
 
             setProfile(response.data.user);
@@ -121,7 +122,7 @@ export default function Profile() {
     const voteItem = async (postId, type) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/posts/${postId}/${type}`,
+                `${API_URL}/api/posts/${postId}/${type}`,
                 {},
                 authConfig
             );
@@ -135,7 +136,7 @@ export default function Profile() {
     const toggleFollow = async () => {
         try {
             await axios.put(
-                `http://localhost:5000/api/users/${profile._id}/follow`,
+                `${API_URL}/api/users/${profile._id}/follow`,
                 {},
                 authConfig
             );
@@ -150,7 +151,7 @@ export default function Profile() {
     const startConversation = async () => {
         try {
             await axios.post(
-                `http://localhost:5000/api/messages/conversation/${profile._id}`,
+                `${API_URL}/api/messages/conversation/${profile._id}`,
                 {},
                 authConfig
             );
@@ -176,7 +177,7 @@ export default function Profile() {
     const saveSkills = async (updatedSkills) => {
         try {
             const response = await axios.put(
-                "http://localhost:5000/api/users/skills",
+                `${API_URL}/api/users/skills`,
                 {
                     skills: updatedSkills,
                 },
@@ -210,7 +211,7 @@ export default function Profile() {
     const saveFeaturedProjects = async (projects) => {
         try {
             const response = await axios.put(
-                "http://localhost:5000/api/users/featured-projects",
+                `${API_URL}/api/users/featured-projects`,
                 {
                     featuredProjects: projects,
                 },
@@ -278,7 +279,7 @@ export default function Profile() {
 
         try {
             await axios.put(
-                "http://localhost:5000/api/users/me/update",
+                `${API_URL}/api/users/me/update`,
                 editForm,
                 authConfig
             );
@@ -303,7 +304,7 @@ export default function Profile() {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/uploads/profile-image",
+                `${API_URL}/api/uploads/profile-image`,
                 formData,
                 {
                     headers: {
@@ -336,7 +337,7 @@ export default function Profile() {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/uploads/profile-image",
+                `${API_URL}/api/uploads/profile-image`,
                 formData,
                 {
                     headers: {
@@ -984,18 +985,16 @@ export default function Profile() {
                                         className="flex gap-4 bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-2xl p-4 hover:border-yellow-500/40 transition"
                                     >
                                         <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 font-black flex items-center justify-center overflow-hidden shrink-0">
-                                            {person.profileImage?.startsWith(
-                                                "http://localhost:5000/uploads/"
-                                            ) ? (
-                                                <img
-                                                    src={person.profileImage}
-                                                    alt={person.name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                person.name?.charAt(0)
-                                            )}
-                                        </div>
+                                        {person.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+                                            <img
+                                                src={person.profileImage}
+                                                alt={person.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        ) : (
+                                            person.name?.charAt(0)
+                                        )}
+                                    </div>
 
                                         <div className="min-w-0">
                                             <h3 className="font-bold truncate">

@@ -13,6 +13,8 @@ import {
     ChevronDown,
 } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Explore() {
     const [posts, setPosts] = useState([]);
     const [developers, setDevelopers] = useState([]);
@@ -32,14 +34,14 @@ export default function Explore() {
         try {
             const [postsRes, developersRes, tagsRes, suggestionsRes] =
                 await Promise.all([
-                    axios.get("http://localhost:5000/api/posts"),
+                    axios.get(`${API_URL}/api/posts`),
                     axios.get(
-                        "http://localhost:5000/api/users/trending/developers",
+                        `${API_URL}/api/users/trending/developers`,
                         authConfig
                     ),
-                    axios.get("http://localhost:5000/api/posts/trending/hashtags"),
+                    axios.get(`${API_URL}/api/posts/trending/hashtags`),
                     axios.get(
-                        "http://localhost:5000/api/users/suggestions/who-to-follow",
+                        `${API_URL}/api/users/suggestions/who-to-follow`,
                         authConfig
                     ),
                 ]);
@@ -69,7 +71,7 @@ export default function Explore() {
     const followUser = async (userId) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/users/${userId}/follow`,
+                `${API_URL}/api/users/${userId}/follow`,
                 {},
                 authConfig
             );
@@ -146,7 +148,7 @@ export default function Explore() {
                                         >
                                             <div className="flex gap-4">
                                                 <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-black overflow-hidden shrink-0">
-                                                    {post.user?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                                                {post.user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                                                         <img
                                                             src={post.user.profileImage}
                                                             alt={post.user.name}
@@ -214,7 +216,7 @@ export default function Explore() {
                                             className="flex gap-3 bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-800 rounded-2xl p-4 hover:border-yellow-500/40 transition"
                                         >
                                             <div className="w-10 h-10 rounded-xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-black overflow-hidden shrink-0">
-                                                {developer.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                                            {developer.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                                                     <img
                                                         src={developer.profileImage}
                                                         alt={developer.name}

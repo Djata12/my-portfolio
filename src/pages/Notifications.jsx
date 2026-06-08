@@ -13,6 +13,8 @@ import {
     AtSign,
 } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Notifications() {
     const [notifications, setNotifications] = useState([]);
     const [currentUser, setCurrentUser] = useState(null);
@@ -30,7 +32,7 @@ export default function Notifications() {
     const fetchCurrentUser = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/auth/profile",
+                `${API_URL}/api/auth/profile`,
                 authConfig
             );
 
@@ -43,7 +45,7 @@ export default function Notifications() {
     const fetchNotifications = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/notifications",
+                `${API_URL}/api/notifications`,
                 authConfig
             );
 
@@ -60,7 +62,7 @@ export default function Notifications() {
     const markAsRead = async (id) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/notifications/${id}/read`,
+                `${API_URL}/api/notifications/${id}/read`,
                 {},
                 authConfig
             );
@@ -76,7 +78,7 @@ export default function Notifications() {
 
         try {
             await axios.put(
-                `http://localhost:5000/api/users/${userId}/follow`,
+                `${API_URL}/api/users/${userId}/follow`,
                 {},
                 authConfig
             );

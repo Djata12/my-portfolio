@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Trophy } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function TrendingDevelopers() {
     const [developers, setDevelopers] = useState([]);
 
@@ -17,7 +19,7 @@ export default function TrendingDevelopers() {
     const fetchTrendingDevelopers = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/users/trending/developers",
+                `${API_URL}/api/users/trending/developers`,
                 authConfig
             );
 
@@ -49,7 +51,7 @@ export default function TrendingDevelopers() {
                         className="flex gap-3 bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-800 rounded-2xl p-4 hover:border-yellow-500/40 transition"
                     >
                         <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 font-black flex items-center justify-center overflow-hidden shrink-0">
-                            {developer.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                        {developer.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                                 <img
                                     src={developer.profileImage}
                                     alt={developer.name}

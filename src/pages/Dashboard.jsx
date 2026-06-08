@@ -27,7 +27,9 @@ import {
     X,
 } from "lucide-react";
 
+
 const socket = io(import.meta.env.VITE_API_URL);
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Dashboard() {
     const [user, setUser] = useState(null);
@@ -68,7 +70,7 @@ export default function Dashboard() {
     const fetchProfile = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/auth/profile",
+                `${API_URL}/api/auth/profile`,
                 authConfig
             );
 
@@ -80,7 +82,7 @@ export default function Dashboard() {
 
     const fetchPosts = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/posts");
+            const response = await axios.get("`${API_URL}/api/posts`");
             setPosts(response.data);
         } catch (error) {
             console.log(error);
@@ -90,7 +92,7 @@ export default function Dashboard() {
     const fetchUnreadNotifications = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/notifications",
+                `${API_URL}/api/notifications`,
                 authConfig
             );
     
@@ -112,13 +114,13 @@ export default function Dashboard() {
     
             localStorage.setItem("visitorId", visitorId);
     
-            await axios.post("http://localhost:5000/api/analytics/track", {
+            await axios.post("`${API_URL}/api/analytics/track`", {
                 visitorId,
                 userId: user?._id || null,
             });
     
             const response = await axios.get(
-                "http://localhost:5000/api/analytics/summary"
+                `${API_URL}/api/analytics/summary`
             );
     
             setAnalytics((prev) => ({
@@ -146,7 +148,7 @@ export default function Dashboard() {
 
         try {
             await axios.post(
-                "http://localhost:5000/api/posts",
+                `${API_URL}/api/posts`,
                 { content },
                 authConfig
             );
@@ -173,7 +175,7 @@ export default function Dashboard() {
 
         try {
             await axios.delete(
-                `http://localhost:5000/api/posts/${postId}`,
+                `${API_URL}/api/posts/${postId}`,
                 authConfig
             );
 
@@ -268,7 +270,7 @@ export default function Dashboard() {
     const searchMentions = async (query) => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/api/users/search/mentions?q=${query}`,
+                `${API_URL}/api/users/search/mentions?q=${query}`,
                 authConfig
             );
     

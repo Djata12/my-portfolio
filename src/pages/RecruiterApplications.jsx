@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Briefcase, Mail } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function RecruiterApplications() {
     const [applications, setApplications] = useState([]);
 
@@ -17,7 +19,7 @@ export default function RecruiterApplications() {
     const fetchApplications = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/applications/recruiter/all",
+                `${API_URL}/api/applications/recruiter/all`,
                 authConfig
             );
 
@@ -30,7 +32,7 @@ export default function RecruiterApplications() {
     const updateStatus = async (applicationId, status) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/applications/${applicationId}/status`,
+                `${API_URL}/api/applications/${applicationId}/status`,
                 { status },
                 authConfig
             );
@@ -44,7 +46,7 @@ export default function RecruiterApplications() {
     const updateNotes = async (applicationId, recruiterNotes) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/applications/${applicationId}/notes`,
+                `${API_URL}/api/applications/${applicationId}/notes`,
                 { recruiterNotes },
                 authConfig
             );

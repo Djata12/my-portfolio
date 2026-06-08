@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { ArrowLeft, Bookmark } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function SavedJobs() {
     const [jobs, setJobs] = useState([]);
 
@@ -17,7 +19,7 @@ export default function SavedJobs() {
     const fetchSavedJobs = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/jobs/saved",
+                `${API_URL}/api/jobs/saved`,
                 authConfig
             );
 

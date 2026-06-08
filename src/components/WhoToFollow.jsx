@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { UserRound } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function WhoToFollow() {
     const [users, setUsers] = useState([]);
 
@@ -17,7 +19,7 @@ export default function WhoToFollow() {
     const fetchSuggestions = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/users/suggestions/who-to-follow",
+                `${API_URL}/api/users/suggestions/who-to-follow`,
                 authConfig
             );
 
@@ -30,7 +32,7 @@ export default function WhoToFollow() {
     const followUser = async (userId) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/users/${userId}/follow`,
+                `${API_URL}/api/users/${userId}/follow`,
                 {},
                 authConfig
             );
@@ -42,7 +44,7 @@ export default function WhoToFollow() {
     };
 
     const isValidUploadedImage = (image) => {
-        return image && image.startsWith("http://localhost:5000/uploads/");
+        return image && image.startsWith(`${API_URL}/uploads/`);
     };
 
     useEffect(() => {

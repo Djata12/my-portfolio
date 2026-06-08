@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Briefcase } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function MyApplications() {
     const [applications, setApplications] = useState([]);
 
@@ -17,7 +19,7 @@ export default function MyApplications() {
     const fetchApplications = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/applications/me/all",
+                `${API_URL}/api/applications/me/all`,
                 authConfig
             );
 

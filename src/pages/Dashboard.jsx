@@ -82,7 +82,7 @@ export default function Dashboard() {
 
     const fetchPosts = async () => {
         try {
-            const response = await axios.get("`${API_URL}/api/posts`");
+            const response = await axios.get(`${API_URL}/api/posts`);
             setPosts(response.data);
         } catch (error) {
             console.log(error);
@@ -114,7 +114,7 @@ export default function Dashboard() {
     
             localStorage.setItem("visitorId", visitorId);
     
-            await axios.post("`${API_URL}/api/analytics/track`", {
+            await axios.post(`${API_URL}/api/analytics/track`, {
                 visitorId,
                 userId: user?._id || null,
             });

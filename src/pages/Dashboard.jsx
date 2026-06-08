@@ -190,13 +190,14 @@ export default function Dashboard() {
             alert("Please login to use this feature.");
             return;
         }
+    
         try {
             await axios.put(
-                `http://localhost:5000/api/posts/${postId}/${action}`,
+                `${API_URL}/api/posts/${postId}/${action}`,
                 {},
                 authConfig
             );
-
+    
             fetchPosts();
         } catch (error) {
             alert(error.response?.data?.message || "Action failed");
@@ -208,9 +209,10 @@ export default function Dashboard() {
             alert("Please login to use this feature.");
             return;
         }
+    
         try {
             await axios.put(
-                `http://localhost:5000/api/posts/${postId}/${type}`,
+                `${API_URL}/api/posts/${postId}/${type}`,
                 {},
                 authConfig
             );
@@ -230,24 +232,25 @@ export default function Dashboard() {
             alert("Please login to use this feature.");
             return;
         }
+    
         if (!commentText.trim() || !activeCommentPost) return;
-
+    
         setCommentLoading(true);
-
+    
         try {
             await axios.post(
-                `http://localhost:5000/api/posts/${activeCommentPost}/comment`,
+                `${API_URL}/api/posts/${activeCommentPost}/comment`,
                 { content: commentText },
                 authConfig
             );
-
+    
             setCommentText("");
             fetchPosts();
             fetchComments(activeCommentPost);
         } catch (error) {
             alert(error.response?.data?.message || "Unable to comment");
         }
-
+    
         setCommentLoading(false);
     };
     
@@ -256,7 +259,7 @@ export default function Dashboard() {
     
         try {
             const response = await axios.get(
-                `http://localhost:5000/api/posts/${postId}/comments`
+                `${API_URL}/api/posts/${postId}/comments`
             );
     
             setComments(response.data);
@@ -367,7 +370,7 @@ export default function Dashboard() {
         onClick={() => setMobileMenuOpen(true)}
         className="w-11 h-11 rounded-2xl bg-yellow-500 text-black flex items-center justify-center font-black overflow-hidden"
     >
-        {user?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+        {user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
             <img
                 src={user.profileImage}
                 alt={user.name}
@@ -495,7 +498,7 @@ export default function Dashboard() {
                         className="flex items-center gap-4 group"
                     >
                         <div className="w-14 h-14 rounded-2xl bg-yellow-500 text-black flex items-center justify-center font-bold text-xl overflow-hidden">
-                            {user?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                        {user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                                 <img
                                     src={user.profileImage}
                                     alt={user.name}
@@ -611,7 +614,7 @@ export default function Dashboard() {
                         >
                             <div className="flex gap-4">
                             <div className="hidden sm:flex w-12 h-12 rounded-2xl bg-yellow-500 text-black items-center justify-center font-bold overflow-hidden">
-                                    {user?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                            {user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                                         <img
                                             src={user.profileImage}
                                             alt={user.name}
@@ -741,7 +744,7 @@ export default function Dashboard() {
                             >
                                 <div className="flex gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-bold shrink-0 overflow-hidden">
-                                        {post.user?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                                {post.user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                                             <img
                                                 src={post.user.profileImage}
                                                 alt={post.user.name}
@@ -942,7 +945,7 @@ export default function Dashboard() {
                     className="flex items-center gap-3"
                 >
                     <div className="w-14 h-14 rounded-2xl bg-yellow-500 text-black flex items-center justify-center font-black overflow-hidden">
-                        {user?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                    {user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                             <img
                                 src={user.profileImage}
                                 alt={user.name}

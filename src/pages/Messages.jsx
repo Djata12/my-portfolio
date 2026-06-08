@@ -7,6 +7,7 @@ import { ArrowLeft, Mail, Send } from "lucide-react";
 import MentionRenderer from "../components/MentionRenderer";
 
 const socket = io(import.meta.env.VITE_API_URL);
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Messages() {
     const [conversations, setConversations] = useState([]);
@@ -43,7 +44,7 @@ export default function Messages() {
     const fetchCurrentUser = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/auth/profile",
+                `${API_URL}/api/auth/profile`,
                 authConfig
             );
 
@@ -56,7 +57,7 @@ export default function Messages() {
     const fetchConversations = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/messages/conversations",
+                `${API_URL}/api/messages/conversations`,
                 authConfig
             );
 
@@ -72,14 +73,14 @@ export default function Messages() {
 
         try {
             const response = await axios.get(
-                `http://localhost:5000/api/messages/${conversation._id}`,
+                `${API_URL}/api/messages/${conversation._id}`,
                 authConfig
             );
 
             setMessages(response.data);
 
             await axios.put(
-                `http://localhost:5000/api/messages/${conversation._id}/read`,
+                `${API_URL}/api/messages/${conversation._id}/read`,
                 {},
                 authConfig
             );
@@ -104,7 +105,7 @@ export default function Messages() {
             formData.append("image", file);
 
             const response = await axios.post(
-                "http://localhost:5000/api/uploads/message-image",
+                `${API_URL}/api/uploads/message-image`,
                 formData,
                 {
                     headers: {
@@ -131,7 +132,7 @@ export default function Messages() {
             formData.append("file", selectedFile);
     
             const response = await axios.post(
-                "http://localhost:5000/api/uploads/message-file",
+                `${API_URL}/api/uploads/message-file`,
                 formData,
                 {
                     headers: {
@@ -178,7 +179,7 @@ export default function Messages() {
             }
 
             await axios.post(
-                `http://localhost:5000/api/messages/${activeConversation._id}`,
+                `${API_URL}/api/messages/${activeConversation._id}`,
                 {
                     text,
                     image: imageUrl,
@@ -204,7 +205,7 @@ export default function Messages() {
     const editMessage = async (messageId) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/messages/message/${messageId}/edit`,
+                `${API_URL}/api/messages/message/${messageId}/edit`,
                 {
                     text: editedText,
                 },
@@ -225,7 +226,7 @@ export default function Messages() {
     
         try {
             await axios.delete(
-                `http://localhost:5000/api/messages/message/${messageId}`,
+                `${API_URL}/api/messages/message/${messageId}`,
                 authConfig
             );
         } catch (error) {
@@ -236,7 +237,7 @@ export default function Messages() {
     const reactToMessage = async (messageId, emoji) => {
         try {
             await axios.put(
-                `http://localhost:5000/api/messages/message/${messageId}/reaction`,
+                `${API_URL}/api/messages/message/${messageId}/reaction`,
                 { emoji },
                 authConfig
             );
@@ -255,7 +256,7 @@ export default function Messages() {
     
         try {
             const response = await axios.get(
-                `http://localhost:5000/api/messages/${activeConversation._id}/search?q=${value}`,
+                `${API_URL}/api/messages/${activeConversation._id}/search?q=${value}`,
                 authConfig
             );
     
@@ -457,22 +458,17 @@ export default function Messages() {
                                         }`}
                                     >
                                         <div className="flex gap-3">
-                                            <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-black overflow-hidden shrink-0">
-                                                {otherUser?.profileImage?.startsWith(
-                                                    "http://localhost:5000/uploads/"
-                                                ) ? (
-                                                    <img
-                                                        src={
-                                                            otherUser.profileImage
-                                                        }
-                                                        alt={otherUser.name}
-                                                        className="w-full h-full object-cover"
-                                                    />
-                                                ) : (
-                                                    otherUser?.name?.charAt(0) ||
-                                                    "U"
-                                                )}
-                                            </div>
+                                        <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-black overflow-hidden shrink-0">
+                                        {otherUser?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+                                            <img
+                                                src={otherUser.profileImage}
+                                                alt={otherUser.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        ) : (
+                                            otherUser?.name?.charAt(0) || "U"
+                                        )}
+                                    </div>
 
                                             <div className="min-w-0 flex-1">
                                                 <div className="flex items-center justify-between gap-3">
@@ -548,25 +544,17 @@ export default function Messages() {
 
                                         return (
                                             <div className="flex items-center gap-3">
-                                                <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-black overflow-hidden">
-                                                    {otherUser?.profileImage?.startsWith(
-                                                        "http://localhost:5000/uploads/"
-                                                    ) ? (
-                                                        <img
-                                                            src={
-                                                                otherUser.profileImage
-                                                            }
-                                                            alt={
-                                                                otherUser.name
-                                                            }
-                                                            className="w-full h-full object-cover"
-                                                        />
-                                                    ) : (
-                                                        otherUser?.name?.charAt(
-                                                            0
-                                                        ) || "U"
-                                                    )}
-                                                </div>
+                                            <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-black overflow-hidden">
+                                        {otherUser?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+                                            <img
+                                                src={otherUser.profileImage}
+                                                alt={otherUser.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        ) : (
+                                            otherUser?.name?.charAt(0) || "U"
+                                        )}
+                                    </div>
 
                                                 <div>
                                                     <h2 className="font-black">

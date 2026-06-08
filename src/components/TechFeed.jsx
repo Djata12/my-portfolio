@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { ExternalLink } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function TechFeed() {
     const [news, setNews] = useState({
         devTo: [],
@@ -13,7 +15,7 @@ export default function TechFeed() {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/news");
+                const response = await axios.get(`${API_URL}/api/news`);
 
                 setNews(response.data);
             } catch (error) {

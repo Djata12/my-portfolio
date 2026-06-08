@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Hash } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function TrendingHashtags() {
     const [tags, setTags] = useState([]);
 
     const fetchTrendingHashtags = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/posts/trending/hashtags"
+                `${API_URL}/api/posts/trending/hashtags`
             );
 
             setTags(response.data);

@@ -12,6 +12,8 @@ import {
     ChevronDown,
 } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Hashtag() {
     const { tag } = useParams();
 
@@ -20,7 +22,7 @@ export default function Hashtag() {
 
     const fetchHashtagPosts = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/posts");
+            const response = await axios.get(`${API_URL}/api/posts`);
 
             const filtered = response.data.filter((post) =>
                 post.content?.toLowerCase().includes(`#${tag.toLowerCase()}`)
@@ -90,7 +92,7 @@ export default function Hashtag() {
                         >
                             <div className="flex gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center font-black shrink-0 overflow-hidden">
-                                    {post.user?.profileImage?.startsWith("http://localhost:5000/uploads/") ? (
+                                {post.user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
                                         <img
                                             src={post.user.profileImage}
                                             alt={post.user.name}

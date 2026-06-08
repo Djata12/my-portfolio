@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { ArrowLeft, Briefcase, Trash2, X } from "lucide-react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Jobs() {
     const [jobs, setJobs] = useState([]);
     const [showForm, setShowForm] = useState(false);
@@ -35,7 +37,7 @@ export default function Jobs() {
     const fetchCurrentUser = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/auth/profile",
+                `${API_URL}/api/auth/profile`,
                 authConfig
             );
 
@@ -48,7 +50,7 @@ export default function Jobs() {
     const fetchSavedJobs = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/jobs/saved",
+                `${API_URL}/api/jobs/saved`,
                 authConfig
             );
 
@@ -61,7 +63,7 @@ export default function Jobs() {
     const fetchJobs = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/jobs",
+                `${API_URL}/api/jobs`,
                 authConfig
             );
 
@@ -76,7 +78,7 @@ export default function Jobs() {
 
         try {
             await axios.post(
-                "http://localhost:5000/api/jobs",
+                `${API_URL}/api/jobs`,
                 {
                     ...form,
                     skills: form.skills
@@ -108,7 +110,7 @@ export default function Jobs() {
     const toggleSaveJob = async (jobId) => {
         try {
             const response = await axios.put(
-                `http://localhost:5000/api/jobs/${jobId}/save`,
+                `${API_URL}/api/jobs/${jobId}/save`,
                 {},
                 authConfig
             );
@@ -126,7 +128,7 @@ export default function Jobs() {
 
         try {
             await axios.delete(
-                `http://localhost:5000/api/jobs/${jobId}`,
+                `${API_URL}/api/jobs/${jobId}`,
                 authConfig
             );
 
@@ -141,7 +143,7 @@ export default function Jobs() {
 
         try {
             await axios.post(
-                `http://localhost:5000/api/applications/${selectedJob._id}`,
+                `${API_URL}/api/applications/${selectedJob._id}`,
                 { coverLetter },
                 authConfig
             );

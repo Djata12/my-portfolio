@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 export default function MentionRenderer({ text }) {
     if (!text) return null;
 
-    const pattern = /(@gth[A-Za-z0-9_]+|#[A-Za-z0-9_]+)/g;
+    const pattern = /(@(?:gth)?[A-Za-z0-9_]+|#[A-Za-z0-9_]+)/g;
     const parts = text.split(pattern);
 
     return (
         <>
             {parts.map((part, index) => {
-                if (part.startsWith("@gth")) {
-                    const username = part.replace("@gth", "");
+                if (part.startsWith("@")) {
+                    const username = part.startsWith("@gth")
+                        ? part.replace("@gth", "")
+                        : part.replace("@", "");
 
                     return (
                         <Link

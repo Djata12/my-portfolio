@@ -287,8 +287,8 @@ export default function Dashboard() {
     const logout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-
-        window.location.href = "/login";
+    
+        window.location.replace("/");
     };
 
     const hasUserReacted = (list) => {

@@ -94,7 +94,7 @@ export default function Support() {
                             <Heart size={30} />
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl font-black">
+                        <h1 className="text-4xl sm:text-5xl font-medium tracking-tight leading-none">
                             Support My Work
                         </h1>
 
@@ -178,7 +178,7 @@ export default function Support() {
                             onSubmit={handleSubmit}
                             className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[32px] p-8 space-y-5"
                         >
-                            <h2 className="text-3xl font-black">
+                            <h2 className="text-3xl font-medium tracking-tight">
                                 Make a Contribution
                             </h2>
 
@@ -237,9 +237,9 @@ export default function Support() {
                         </form>
 
                         <section className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[32px] p-6">
-                            <h2 className="text-2xl font-black">
-                                Recent Supporters
-                            </h2>
+                        <h2 className="text-2xl font-medium tracking-tight">
+                            Recent Supporters
+                        </h2>
 
                             <div className="mt-5 space-y-3">
                                 {supporters.length === 0 && (

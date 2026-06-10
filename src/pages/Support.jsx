@@ -117,7 +117,7 @@ export default function Support() {
                                 }`}
                             >
                                 <Coffee size={24} />
-                                <p className="font-black mt-4">Coffee</p>
+                                <p className="font-medium mt-4 tracking-tight">Coffee</p>
                                 <p className="text-sm opacity-75">GHS 20</p>
                             </button>
 
@@ -131,7 +131,7 @@ export default function Support() {
                                 }`}
                             >
                                 <Lightbulb size={24} />
-                                <p className="font-black mt-4">Project Boost</p>
+                                <p className="font-medium mt-4 tracking-tight">Project Boost</p>
                                 <p className="text-sm opacity-75">GHS 50</p>
                             </button>
 
@@ -145,7 +145,7 @@ export default function Support() {
                                 }`}
                             >
                                 <Crown size={24} />
-                                <p className="font-black mt-4">
+                                <p className="font-medium mt-4 tracking-tight">
                                     Community Sponsor
                                 </p>
                                 <p className="text-sm opacity-75">GHS 100</p>
@@ -154,18 +154,18 @@ export default function Support() {
 
                         <div className="grid grid-cols-2 gap-4 mt-8">
                             <div className="bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-800 rounded-3xl p-5">
-                                <p className="text-3xl font-black">
-                                    GHS {stats.totalAmount}
-                                </p>
+                            <p className="text-3xl font-medium tracking-tight">
+                                GH₵ {stats.totalAmount}
+                            </p>
                                 <p className="text-zinc-500 text-sm mt-1">
                                     Total support
                                 </p>
                             </div>
 
                             <div className="bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-800 rounded-3xl p-5">
-                                <p className="text-3xl font-black">
-                                    {stats.totalSupporters}
-                                </p>
+                            <p className="text-3xl font-medium tracking-tight">
+                                {stats.totalSupporters}
+                            </p>
                                 <p className="text-zinc-500 text-sm mt-1">
                                     Supporters
                                 </p>
@@ -267,7 +267,7 @@ export default function Support() {
                                             </div>
 
                                             <p className="font-black text-yellow-600 dark:text-yellow-400">
-                                                GHS {supporter.amount}
+                                            GH₵ {supporter.amount}
                                             </p>
                                         </div>
                                     </div>

@@ -17,6 +17,8 @@ import Jobs from "./pages/Jobs";
 import SavedJobs from "./pages/SavedJobs";
 import MyApplications from "./pages/MyApplications";
 import RecruiterApplications from "./pages/RecruiterApplications";
+import Support from "./pages/Support";
+import SupportSuccess from "./pages/SupportSuccess";
 
 import Home from "./pages/Home";
 
@@ -163,6 +165,16 @@ export default function App() {
             <Hashtag />
           </ProtectedRoute>
         }
+      />
+      
+      <Route 
+        path="/support" 
+        element={<Support />} 
+      />
+      
+      <Route 
+        path="/support/success" 
+        element={<SupportSuccess />} 
       />
 
         <Route

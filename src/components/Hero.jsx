@@ -1,5 +1,6 @@
 import profileImg from "../assets/profile/profile.webp";
 import cvFile from "../assets/Benjamin-Djata-CV.pdf";
+import { Link } from "react-router-dom";
 
 import {
     FaReact,
@@ -68,6 +69,13 @@ export default function Hero() {
                         >
                             Contact Me
                         </a>
+                        
+                        <Link
+                            to="/support"
+                            className="border border-blue-500/30 bg-blue-500/10 text-blue-500 dark:text-blue-400 hover:border-cyan-500 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10"
+                        >
+                            Support My Work
+                        </Link>
 
                     </div>
 

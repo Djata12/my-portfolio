@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
 
     return (
@@ -93,6 +95,20 @@ export default function Navbar() {
 
                             <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
                         </a>
+
+                        <Link
+                            to="/support"
+                            className="
+                                bg-gradient-to-r from-blue-500 to-cyan-500
+                                text-white px-5 py-3 rounded-2xl font-semibold
+                                shadow-lg shadow-blue-500/20
+                                hover:shadow-xl hover:shadow-blue-500/30
+                                hover:scale-[1.02] active:scale-[0.98]
+                                transition-all duration-300
+                            "
+                        >
+                            Support My Work
+                        </Link>
 
                     </div>
 

@@ -1,6 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
-import { ArrowLeft, Coffee, Heart, Rocket } from "lucide-react";
+import {
+    ArrowLeft,
+    Coffee,
+    Heart,
+    Lightbulb,
+    Crown,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -97,7 +103,7 @@ export default function Support() {
                                         : "bg-white dark:bg-[#09090b] border-zinc-300 dark:border-zinc-800"
                                 }`}
                             >
-                                <Rocket size={24} />
+                                <Lightbulb size={24} />
                                 <p className="font-black mt-4">Project Boost</p>
                                 <p className="text-sm opacity-75">GHS 50</p>
                             </button>
@@ -111,8 +117,8 @@ export default function Support() {
                                         : "bg-white dark:bg-[#09090b] border-zinc-300 dark:border-zinc-800"
                                 }`}
                             >
-                                <Heart size={24} />
-                                <p className="font-black mt-4">Sponsor</p>
+                                <Crown size={24} />
+                                <p className="font-black mt-4">Community Sponsor</p>
                                 <p className="text-sm opacity-75">GHS 100</p>
                             </button>
                         </div>

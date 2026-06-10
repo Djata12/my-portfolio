@@ -111,6 +111,19 @@ export default function Navbar() {
                         </Link>
 
                     </div>
+                    
+                    <Link
+                        to="/support"
+                        className="
+                            md:hidden
+                            bg-gradient-to-r from-blue-500 to-cyan-500
+                            text-white px-4 py-3 rounded-2xl font-semibold text-sm
+                            shadow-lg shadow-blue-500/20
+                            transition-all duration-300
+                        "
+                    >
+                        Support
+                    </Link>
 
                 </div>
 

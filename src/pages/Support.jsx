@@ -224,7 +224,7 @@ export default function Support() {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full bg-yellow-500 hover:bg-yellow-400 text-black py-4 rounded-2xl font-black transition"
+                                className="w-full bg-yellow-500 hover:bg-yellow-400 text-black py-4 rounded-2xl font-medium tracking-tight transition"
                             >
                                 {loading
                                     ? "Opening Paystack..."

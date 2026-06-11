@@ -370,7 +370,7 @@ export default function Dashboard() {
         onClick={() => setMobileMenuOpen(true)}
         className="w-11 h-11 rounded-2xl bg-yellow-500 text-black flex items-center justify-center font-black overflow-hidden"
     >
-        {user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+        {user?.profileImage ? (
             <img
                 src={user.profileImage}
                 alt={user.name}
@@ -498,7 +498,7 @@ export default function Dashboard() {
                         className="flex items-center gap-4 group"
                     >
                         <div className="w-14 h-14 rounded-2xl bg-yellow-500 text-black flex items-center justify-center font-bold text-xl overflow-hidden">
-                        {user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+                        {user?.profileImage ? (
                                 <img
                                     src={user.profileImage}
                                     alt={user.name}
@@ -614,7 +614,7 @@ export default function Dashboard() {
                         >
                             <div className="flex gap-4">
                             <div className="hidden sm:flex w-12 h-12 rounded-2xl bg-yellow-500 text-black items-center justify-center font-bold overflow-hidden">
-                            {user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+                            {user?.profileImage ? (
                                         <img
                                             src={user.profileImage}
                                             alt={user.name}
@@ -710,32 +710,32 @@ export default function Dashboard() {
                     )}
                     
                     {isGuest && (
-    <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[28px] p-6 text-center">
-        <h2 className="text-2xl font-black">
-            Browse GhanaTechHub
-        </h2>
+                        <div className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[28px] p-6 text-center">
+                            <h2 className="text-2xl font-black">
+                                Browse GhanaTechHub
+                            </h2>
 
-        <p className="text-zinc-500 mt-2">
-            You can explore discussions, tags, and tech news. Login to post, reply, follow, or message developers.
-        </p>
+                            <p className="text-zinc-500 mt-2">
+                                You can explore discussions, tags, and tech news. Login to post, reply, follow, or message developers.
+                            </p>
 
-        <div className="flex justify-center gap-3 mt-5">
-            <Link
-                to="/login"
-                className="bg-yellow-500 hover:bg-yellow-400 text-black px-5 py-3 rounded-2xl font-bold"
-            >
-                Login
-            </Link>
+                            <div className="flex justify-center gap-3 mt-5">
+                                <Link
+                                    to="/login"
+                                    className="bg-yellow-500 hover:bg-yellow-400 text-black px-5 py-3 rounded-2xl font-bold"
+                                >
+                                    Login
+                                </Link>
 
-            <Link
-                to="/register"
-                className="bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-800 px-5 py-3 rounded-2xl font-bold"
-            >
-                Register
-            </Link>
-        </div>
-    </div>
-)}
+                                <Link
+                                    to="/register"
+                                    className="bg-white dark:bg-[#09090b] border border-zinc-300 dark:border-zinc-800 px-5 py-3 rounded-2xl font-bold"
+                                >
+                                    Register
+                                </Link>
+                            </div>
+                        </div>
+                    )}
 
                         {filteredPosts.map((post) => (
                             <article
@@ -744,7 +744,7 @@ export default function Dashboard() {
                             >
                                 <div className="flex gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-bold shrink-0 overflow-hidden">
-                                {post.user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+                                {post.user?.profileImage ? (
                                             <img
                                                 src={post.user.profileImage}
                                                 alt={post.user.name}
@@ -810,7 +810,7 @@ export default function Dashboard() {
                                             </div>
                                         )}
 
-                                        <div className="flex flex-wrap items-center gap-3 sm:gap-5 mt-6 text-sm text-zinc-500">
+                                        <div className="flex items-center gap-4 mt-6 text-sm text-zinc-500 overflow-x-auto whitespace-nowrap pb-1">
 
                                             <button
                                                 onClick={() => {
@@ -945,7 +945,7 @@ export default function Dashboard() {
                     className="flex items-center gap-3"
                 >
                     <div className="w-14 h-14 rounded-2xl bg-yellow-500 text-black flex items-center justify-center font-black overflow-hidden">
-                    {user?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+                        {user?.profileImage ? (
                             <img
                                 src={user.profileImage}
                                 alt={user.name}

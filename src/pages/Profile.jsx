@@ -3,6 +3,7 @@ import { io } from "socket.io-client";
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import MentionRenderer from "../components/MentionRenderer";
 
 import {
     ArrowLeft,
@@ -804,7 +805,7 @@ export default function Profile() {
                                                 </p>
 
                                                 <p className="text-zinc-800 dark:text-zinc-200 mt-4 leading-relaxed whitespace-pre-wrap">
-                                                    {post.content}
+                                                <MentionRenderer text={post.content} />
                                                 </p>
 
                                                 <div className="flex flex-wrap items-center gap-5 mt-6 text-sm text-zinc-500">
@@ -902,7 +903,7 @@ export default function Profile() {
                                                 </p>
 
                                                 <p className="mt-4 text-zinc-800 dark:text-zinc-200 whitespace-pre-wrap">
-                                                    {comment.content}
+                                                <MentionRenderer text={comment.content} />
                                                 </p>
 
                                                 <div className="flex gap-5 mt-5 text-sm text-zinc-500">

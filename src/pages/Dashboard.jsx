@@ -325,7 +325,7 @@ export default function Dashboard() {
     }, []);
     
     useEffect(() => {
-        socket.on("online-users-count", (count) => {
+        socket.on("online-users-count", (count) => {<div className="flex gap-4">  </div>
             setAnalytics((prev) => ({
                 ...prev,
                 usersOnline: count,
@@ -613,7 +613,7 @@ export default function Dashboard() {
                             onSubmit={createDiscussion}
                             className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[28px] p-5 sm:p-6"
                         >
-                            <div className="flex gap-4">
+                            <div className="flex gap-3 sm:gap-4">
                             <div className="hidden sm:flex w-12 h-12 rounded-2xl bg-yellow-500 text-black items-center justify-center font-bold overflow-hidden">
                             {user?.profileImage ? (
                                         <img
@@ -741,10 +741,10 @@ export default function Dashboard() {
                         {filteredPosts.map((post) => (
                             <article
                                 key={post._id}
-                                className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[28px] p-5 sm:p-6"
+                                className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[28px] p-4 sm:p-6"
                             >
                                 <div className="flex gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-bold shrink-0 overflow-hidden">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-bold shrink-0 overflow-hidden">
                                 {post.user?.profileImage ? (
                                             <img
                                                 src={post.user.profileImage}

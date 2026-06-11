@@ -311,13 +311,14 @@ export default function Dashboard() {
 
     useEffect(() => {
         const loadDashboard = async () => {
-            if (!isGuest) {
-                await fetchProfile();
-                await fetchUnreadNotifications();
-            }
-    
             await fetchPosts();
-            await fetchAnalytics();
+        
+            if (!isGuest) {
+                fetchProfile();
+                fetchUnreadNotifications();
+            }
+        
+            fetchAnalytics();
         };
     
         loadDashboard();

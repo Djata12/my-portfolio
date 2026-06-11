@@ -29,7 +29,7 @@ function Avatar({ profile, size = "large" }) {
         <div
             className={`${sizeClass} border-4 border-zinc-100 dark:border-zinc-900 bg-yellow-500 text-black flex items-center justify-center font-black shadow-xl overflow-hidden shrink-0`}
         >
-            {profile?.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+            {profile?.profileImage ? (
                 <img
                     src={profile.profileImage}
                     alt={profile.name}
@@ -985,7 +985,7 @@ export default function Profile() {
                                         className="flex gap-4 bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-2xl p-4 hover:border-yellow-500/40 transition"
                                     >
                                         <div className="w-12 h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 font-black flex items-center justify-center overflow-hidden shrink-0">
-                                        {person.profileImage?.startsWith(`${API_URL}/uploads/`) ? (
+                                        {person.profileImage ? (
                                             <img
                                                 src={person.profileImage}
                                                 alt={person.name}

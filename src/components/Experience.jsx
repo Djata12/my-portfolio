@@ -97,7 +97,7 @@ export default function Experience() {
 
                 {
                     name: "Vercel",
-                    icon: <SiVercel className="text-white" />,
+                    icon: <SiVercel className="text-black dark:text-white" />,
                 },
 
                 {

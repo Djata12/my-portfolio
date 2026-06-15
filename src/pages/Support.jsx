@@ -255,7 +255,7 @@ export default function Support() {
                                     >
                                         <div className="flex items-center justify-between gap-4">
                                             <div>
-                                                <p className="font-black">
+                                            <p className="font-medium tracking-tight">
                                                     {supporter.name}
                                                 </p>
 
@@ -266,7 +266,7 @@ export default function Support() {
                                                 )}
                                             </div>
 
-                                            <p className="font-black text-yellow-600 dark:text-yellow-400">
+                                            <p className="font-medium tracking-tight text-yellow-600 dark:text-yellow-400">
                                             GH₵ {supporter.amount}
                                             </p>
                                         </div>

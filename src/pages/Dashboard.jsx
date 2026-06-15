@@ -613,7 +613,7 @@ export default function Dashboard() {
                             onSubmit={createDiscussion}
                             className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[28px] p-5 sm:p-6"
                         >
-                            <div className="flex gap-3 sm:gap-4">
+                            <div className="flex gap-3">
                             <div className="hidden sm:flex w-12 h-12 rounded-2xl bg-yellow-500 text-black items-center justify-center font-bold overflow-hidden">
                             {user?.profileImage ? (
                                         <img
@@ -741,10 +741,10 @@ export default function Dashboard() {
                         {filteredPosts.map((post) => (
                             <article
                                 key={post._id}
-                                className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[28px] p-4 sm:p-6"
+                                className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-[24px] p-3 sm:p-6"
                             >
                                 <div className="flex gap-4">
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-bold shrink-0 overflow-hidden">
+                                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-bold shrink-0 overflow-hidden">
                                 {post.user?.profileImage ? (
                                             <img
                                                 src={post.user.profileImage}
@@ -795,7 +795,7 @@ export default function Dashboard() {
                                             )}
                                         </div>
 
-                                        <p className="text-zinc-800 dark:text-zinc-200 mt-4 leading-relaxed whitespace-pre-wrap">
+                                        <p className="text-zinc-800 dark:text-zinc-200 mt-3 leading-relaxed whitespace-pre-wrap break-words">
                                             <MentionRenderer text={post.content} />
                                         </p>
 
@@ -1098,9 +1098,9 @@ export default function Dashboard() {
             className="bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-2xl p-4"
         >
 
-            <div className="flex gap-3">
+                <div className="flex gap-3 relative">
 
-                <div className="w-10 h-10 rounded-xl bg-yellow-500 text-black flex items-center justify-center font-bold shrink-0 overflow-hidden">
+                <div className="relative w-10 h-10 rounded-full bg-yellow-500 text-black flex items-center justify-center font-bold shrink-0 overflow-hidden after:content-[''] after:absolute after:top-10 after:left-1/2 after:-translate-x-1/2 after:w-[2px] after:h-full after:bg-zinc-300 dark:after:bg-zinc-700">
 
                     {comment.user?.profileImage ? (
 
